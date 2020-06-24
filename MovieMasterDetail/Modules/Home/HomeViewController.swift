@@ -11,13 +11,19 @@
 import UIKit
 
 class HomeViewController: UIViewController, HomeView {
-
-	var presenter: HomePresenter?
-
-	override func viewDidLoad() {
+    
+    var presenter: HomePresenter?
+    
+    @IBOutlet weak var moviesTableView: UITableView!
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
         HomeBuilder().build(vc: self, navigator: self.navigationController!)
         self.presenter?.fetchMovies()
     }
-
+    
+    func showError(message: String) {
+        
+    }
+    
 }

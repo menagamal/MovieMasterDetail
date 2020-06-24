@@ -13,5 +13,7 @@ import UIKit
 
 //MARK: View -
 protocol HomeView: class {
-
+    var moviesTableView: UITableView! {set get}
+    
+    func showError(message:String) 
 }

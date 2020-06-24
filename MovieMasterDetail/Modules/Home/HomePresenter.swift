@@ -12,13 +12,15 @@ import UIKit
 
 class HomePresenter: HomePresenterUseCases,HomePresenterDelegate {
     
-    
+    //MARK: Dependacnies
     private var interactor:HomeInteractor?
     private var router:HomeRouter?
     
     //MARK: TO AVOID RETAIN CYCLE
     private weak var view:HomeView?
     
+    //MARK: Attributes
+    private var dataSource:MovieTableViewCellDataSource?
     
     init(interactor:HomeInteractor,router:HomeRouter,view:HomeView) {
         self.interactor = interactor
@@ -31,6 +33,7 @@ class HomePresenter: HomePresenterUseCases,HomePresenterDelegate {
     }
     func didFetchMovies(movies: [Movie]) {
         // Load DataSource
+        dataSource = MovieTableViewCellDataSource(delegate: self, tableView: self.view!.moviesTableView, items: movies)
     }
     
     func errorFetchingMovies(error: HomeConstant.HomeError) {
@@ -38,6 +41,17 @@ class HomePresenter: HomePresenterUseCases,HomePresenterDelegate {
     }
     
 }
+
+extension HomePresenter:MovieTableViewCellDataSourceDelegate{
+    func didSelected() {
+        // Move to Details Screen
+        router?.navigate(to: .None)
+    }
+    
+    
+}
+
+
 protocol HomePresenterUseCases {
     func fetchMovies()
 }
