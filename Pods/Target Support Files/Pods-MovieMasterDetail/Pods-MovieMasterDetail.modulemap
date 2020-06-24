@@ -1,0 +1,6 @@
+framework module Pods_MovieMasterDetail {
+  umbrella header "Pods-MovieMasterDetail-umbrella.h"
+
+  export *
+  module * { export * }
+}
