@@ -11,17 +11,39 @@
 import Foundation
 
 
-typealias ServicesResponse = (Error?,[Movie])
 
 protocol HomeUseCase {
-    func parseMoviesFromLocalFile(completation:@escaping( (ServicesResponse)-> Void))
+    func parseMoviesFromLocalFile()
 }
 
 class HomeInteractor: HomeUseCase {
     
+    var presenter:HomePresenterDelegate?
+    
     init() {
+    
     }
-    func parseMoviesFromLocalFile(completation:@escaping( (ServicesResponse)-> Void)) {
+    
+    func parseMoviesFromLocalFile() {
+        
+        let bundle = Bundle(for: type(of: self))
+        guard let url = bundle.url(forResource: "movies", withExtension: "json") else {
+            presenter?.errorFetchingMovies(error: .NoJsonFile)
+            return
+        }
+        do {
+            let json = try Data(contentsOf: url)
+            do {
+                let responseModel: MoviesResponse = try JSONDecoder().decode(MoviesResponse.self, from: json)
+                
+               
+                presenter?.didFetchMovies(movies: responseModel.movies!)
+            } catch {
+                presenter?.errorFetchingMovies(error: .ParsingError)
+            }
+        } catch {
+            presenter?.errorFetchingMovies(error: .ParsingError)
+        }
         
     }
     

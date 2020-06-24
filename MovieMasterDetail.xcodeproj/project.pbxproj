@@ -63,7 +63,7 @@
 		D0E123FA24A3CC3600F22F6B /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomePresenter.swift; path = ../HomePresenter.swift; sourceTree = "<group>"; };
 		D0E123FB24A3CC3600F22F6B /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeRouter.swift; path = ../HomeRouter.swift; sourceTree = "<group>"; };
 		D0E123FC24A3CC3600F22F6B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ../HomeViewController.swift; sourceTree = "<group>"; };
-		D0E123FD24A3CC3600F22F6B /* HomeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeBuilder.swift; path = ../HomeBuilder.swift; sourceTree = "<group>"; };
+		D0E123FD24A3CC3600F22F6B /* HomeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBuilder.swift; sourceTree = "<group>"; };
 		D0E123FE24A3CC3600F22F6B /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeInteractor.swift; path = ../HomeInteractor.swift; sourceTree = "<group>"; };
 		D0E123FF24A3CC3600F22F6B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = ../HomeView.swift; sourceTree = "<group>"; };
 		D0E1240C24A3CCF900F22F6B /* HomeTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTarget.swift; sourceTree = "<group>"; };
@@ -182,7 +182,6 @@
 			isa = PBXGroup;
 			children = (
 				D0E1240B24A3CCE800F22F6B /* Cells */,
-				D0E1240A24A3CCE100F22F6B /* Entity */,
 				D0E1240924A3CCCB00F22F6B /* VIPER */,
 				D0E1240824A3CC7200F22F6B /* Target */,
 			);
@@ -201,10 +200,11 @@
 		D0E1240924A3CCCB00F22F6B /* VIPER */ = {
 			isa = PBXGroup;
 			children = (
+				D0E1241F24A3E3CB00F22F6B /* Builder */,
+				D0E1240A24A3CCE100F22F6B /* Entity */,
 				D0E123FA24A3CC3600F22F6B /* HomePresenter.swift */,
 				D0E123FB24A3CC3600F22F6B /* HomeRouter.swift */,
 				D0E123FC24A3CC3600F22F6B /* HomeViewController.swift */,
-				D0E123FD24A3CC3600F22F6B /* HomeBuilder.swift */,
 				D0E123FE24A3CC3600F22F6B /* HomeInteractor.swift */,
 				D0E123FF24A3CC3600F22F6B /* HomeView.swift */,
 			);
@@ -233,6 +233,14 @@
 				D0E1241124A3CD5000F22F6B /* AppConstants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		D0E1241F24A3E3CB00F22F6B /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				D0E123FD24A3CC3600F22F6B /* HomeBuilder.swift */,
+			);
+			path = Builder;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

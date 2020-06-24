@@ -10,15 +10,15 @@
 
 import UIKit
 
-class HomePresenter: HomePresenterDelegate {
+class HomePresenter: HomePresenterUseCases,HomePresenterDelegate {
     
-	    
+    
     private var interactor:HomeInteractor?
     private var router:HomeRouter?
     
     //MARK: TO AVOID RETAIN CYCLE
     private weak var view:HomeView?
-
+    
     
     init(interactor:HomeInteractor,router:HomeRouter,view:HomeView) {
         self.interactor = interactor
@@ -27,10 +27,23 @@ class HomePresenter: HomePresenterDelegate {
     }
     
     func fetchMovies() {
-        
+        interactor?.parseMoviesFromLocalFile()
+    }
+    func didFetchMovies(movies: [Movie]) {
+        // Load DataSource
+    }
+    
+    func errorFetchingMovies(error: HomeConstant.HomeError) {
+        // Show ERROR
     }
     
 }
-protocol HomePresenterDelegate {
+protocol HomePresenterUseCases {
     func fetchMovies()
+}
+
+
+protocol HomePresenterDelegate {
+    func didFetchMovies(movies:[Movie])
+    func errorFetchingMovies(error:HomeConstant.HomeError)
 }

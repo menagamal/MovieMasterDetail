@@ -17,6 +17,7 @@ class HomeBuilder {
         let interactor = HomeInteractor()
         let router = HomeRouter(navigationController: navigator)
         vc.presenter = HomePresenter(interactor: interactor, router: router, view: vc)
+        interactor.presenter = vc.presenter
         
     }
 }

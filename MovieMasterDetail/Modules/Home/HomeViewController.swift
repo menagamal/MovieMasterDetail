@@ -16,6 +16,8 @@ class HomeViewController: UIViewController, HomeView {
 
 	override func viewDidLoad() {
         super.viewDidLoad()
+        HomeBuilder().build(vc: self, navigator: self.navigationController!)
+        self.presenter?.fetchMovies()
     }
 
 }
