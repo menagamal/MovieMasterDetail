@@ -10,17 +10,21 @@
 
 import Foundation
 
+
+typealias ServicesResponse = (Error?,[Movie])
+
 protocol HomeUseCase {
-    func fetchMoviesFromLocalFile()
+    func parseMoviesFromLocalFile(completation:@escaping( (ServicesResponse)-> Void))
 }
 
 class HomeInteractor: HomeUseCase {
     
     init() {
     }
-    func fetchMoviesFromLocalFile() {
+    func parseMoviesFromLocalFile(completation:@escaping( (ServicesResponse)-> Void)) {
         
     }
     
     
 }
+

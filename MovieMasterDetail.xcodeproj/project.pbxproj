@@ -30,6 +30,8 @@
 		D0E1241924A3D52200F22F6B /* MoviesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E1241824A3D52200F22F6B /* MoviesResponse.swift */; };
 		D0E1241A24A3D54400F22F6B /* MoviesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E1241824A3D52200F22F6B /* MoviesResponse.swift */; };
 		D0E1241B24A3D54600F22F6B /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E1241624A3D50B00F22F6B /* Movie.swift */; };
+		D0E1241D24A3D5BE00F22F6B /* HomeInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E1241C24A3D5BE00F22F6B /* HomeInteractorMock.swift */; };
+		D0E1241E24A3D73100F22F6B /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E123FE24A3CC3600F22F6B /* HomeInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,7 @@
 		D0E1241124A3CD5000F22F6B /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		D0E1241624A3D50B00F22F6B /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		D0E1241824A3D52200F22F6B /* MoviesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesResponse.swift; sourceTree = "<group>"; };
+		D0E1241C24A3D5BE00F22F6B /* HomeInteractorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractorMock.swift; sourceTree = "<group>"; };
 		D3A6244D424E6158569F39E5 /* Pods-MovieMasterDetailTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieMasterDetailTests.debug.xcconfig"; path = "Target Support Files/Pods-MovieMasterDetailTests/Pods-MovieMasterDetailTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DD34A05A73C2BE096FD1A6B4 /* Pods-MovieMasterDetail.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieMasterDetail.release.xcconfig"; path = "Target Support Files/Pods-MovieMasterDetail/Pods-MovieMasterDetail.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -154,6 +157,7 @@
 			children = (
 				D0E123EA24A3C92C00F22F6B /* MovieMasterDetailTests.swift */,
 				D0E123EC24A3C92C00F22F6B /* Info.plist */,
+				D0E1241C24A3D5BE00F22F6B /* HomeInteractorMock.swift */,
 			);
 			path = MovieMasterDetailTests;
 			sourceTree = "<group>";
@@ -422,7 +426,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0E123EB24A3C92C00F22F6B /* MovieMasterDetailTests.swift in Sources */,
+				D0E1241D24A3D5BE00F22F6B /* HomeInteractorMock.swift in Sources */,
 				D0E1241A24A3D54400F22F6B /* MoviesResponse.swift in Sources */,
+				D0E1241E24A3D73100F22F6B /* HomeInteractor.swift in Sources */,
 				D0E1241B24A3D54600F22F6B /* Movie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

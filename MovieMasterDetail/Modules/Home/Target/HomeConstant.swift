@@ -87,12 +87,15 @@ enum HomeConstant {
     enum HomeError :Error {
         case InvalidURL
         case ParsingError
+        case NoJsonFile
         var localizedDescription: String {
             switch self {
             case .ParsingError:
                 return "the data could not be read in the correct format."
             case .InvalidURL:
                 return "Invalid Url Request"
+                case .NoJsonFile:
+                return "No Json File Found"
             }
         }
     }
