@@ -14,11 +14,14 @@ import Foundation
 
 protocol HomeUseCase {
     func parseMoviesFromLocalFile()
+    func searchWithGenres(str:String,items:[Movie]) -> [Movie]
+    func searchWithTitle(str:String,items:[Movie]) -> [Movie]
 }
 
 class HomeInteractor: HomeUseCase {
     
     var presenter:HomePresenterDelegate?
+    private var movies = [Movie]()
     
     init() {
     
@@ -36,7 +39,7 @@ class HomeInteractor: HomeUseCase {
             do {
                 let responseModel: MoviesResponse = try JSONDecoder().decode(MoviesResponse.self, from: json)
                 
-               
+                self.movies = responseModel.movies!
                 presenter?.didFetchMovies(movies: responseModel.movies!)
             } catch {
                 presenter?.errorFetchingMovies(error: .ParsingError)
@@ -47,6 +50,48 @@ class HomeInteractor: HomeUseCase {
         
     }
     
+    func searchWithGenres(str: String, items: [Movie]) -> [Movie] {
+        
+        // Check if the word is Geners because it is less count comparing it to the whole number of movies
+        let filteredGeners : [String] = Constant.genres.filter({
+            return $0.contains(str)
+        })
+        
+        if filteredGeners.isEmpty {
+            // NOT Geners
+            return [Movie]()
+        } else {
+            let filteredMovies : [Movie] = items.filter({
+                if $0.genres != nil {
+                    return $0.genres!.contains(filteredGeners.first!)
+                }
+                return false
+            })
+            return filteredMovies
+        }
+        
+    }
+    func searchWithTitle(str: String, items: [Movie]) -> [Movie] {
+        
+        let filteredMovies : [Movie] = items.filter({
+            return $0.title!.contains(str)
+        })
+        return filteredMovies
+    }
+    
+    
+    func search(str:String) -> [Movie] {
+        var results = [Movie]()
+        results = searchWithGenres(str: str, items: self.movies)
+        if results.isEmpty {
+            results = searchWithTitle(str: str, items: self.movies)
+        }
+        if str.isEmpty {
+            results = self.movies
+        }
+        return results
+        
+    }
     
 }
 

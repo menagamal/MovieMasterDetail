@@ -39,6 +39,11 @@ class HomePresenter: HomePresenterUseCases,HomePresenterDelegate {
     func errorFetchingMovies(error: HomeConstant.HomeError) {
         // Show ERROR
     }
+    func search(str: String) {
+        let movies = interactor?.search(str: str)
+        dataSource = MovieTableViewCellDataSource(delegate: self, tableView: self.view!.moviesTableView, items: movies!)
+    }
+    
     
 }
 
@@ -54,6 +59,7 @@ extension HomePresenter:MovieTableViewCellDataSourceDelegate{
 
 protocol HomePresenterUseCases {
     func fetchMovies()
+    func search(str:String)
 }
 
 

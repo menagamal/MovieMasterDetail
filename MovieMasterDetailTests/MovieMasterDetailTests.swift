@@ -11,7 +11,8 @@ import XCTest
 
 class MovieMasterDetailTests: XCTestCase {
     
-    var homeInteractor:HomeInteractorMock!
+    var homeInteractorMock:HomeInteractorMock!
+    var homeInteractor:HomeInteractor!
     
     func testFetchJsonFromLocalFile() throws {
         let bundle = Bundle(for: type(of: self))
@@ -23,8 +24,8 @@ class MovieMasterDetailTests: XCTestCase {
     }
     
     func testMoviesParsing() {
-        homeInteractor = HomeInteractorMock()
-        homeInteractor.parseMoviesFromLocalFile { (response) in
+        homeInteractorMock = HomeInteractorMock()
+        homeInteractorMock.parseMoviesFromLocalFile { (response) in
             if let error = response.0 as? HomeConstant.HomeError {
                 XCTFail(error.localizedDescription)
             }
@@ -37,8 +38,9 @@ class MovieMasterDetailTests: XCTestCase {
     }
     
     func testSearchWithTitle() {
-        homeInteractor = HomeInteractorMock()
-        homeInteractor.parseMoviesFromLocalFile { (response) in
+        homeInteractor = HomeInteractor()
+        homeInteractorMock = HomeInteractorMock()
+        homeInteractorMock.parseMoviesFromLocalFile { (response) in
             let movies = response.1
             let comedyMovies = self.homeInteractor.searchWithGenres(str: "Comedy", items: movies)
             for item in comedyMovies {
@@ -55,8 +57,9 @@ class MovieMasterDetailTests: XCTestCase {
     }
     
     func testSearchWithGenres() {
-        homeInteractor = HomeInteractorMock()
-        homeInteractor.parseMoviesFromLocalFile { (response) in
+        homeInteractor = HomeInteractor()
+        homeInteractorMock = HomeInteractorMock()
+        homeInteractorMock.parseMoviesFromLocalFile { (response) in
             let movies = response.1
             let filteredMovies = self.homeInteractor.searchWithTitle(str: "Avengers", items: movies)
             if filteredMovies.isEmpty {

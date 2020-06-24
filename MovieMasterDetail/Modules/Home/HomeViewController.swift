@@ -15,15 +15,33 @@ class HomeViewController: UIViewController, HomeView {
     var presenter: HomePresenter?
     
     @IBOutlet weak var moviesTableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         HomeBuilder().build(vc: self, navigator: self.navigationController!)
         self.presenter?.fetchMovies()
+        searchBar.searchTextField.textColor = .white
+        searchBar.delegate = self
+        if let textFieldInsideSearchBar = self.searchBar.value(forKey: "searchField") as? UITextField,
+            let glassIconView = textFieldInsideSearchBar.leftView as? UIImageView {
+            
+            //Magnifying glass
+            glassIconView.image = glassIconView.image?.withRenderingMode(.alwaysTemplate)
+            glassIconView.tintColor = .white
+        }
+        
     }
     
     func showError(message: String) {
         
     }
     
+}
+
+extension HomeViewController:UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+            self.presenter?.search(str:searchText)
+        
+    }
 }
