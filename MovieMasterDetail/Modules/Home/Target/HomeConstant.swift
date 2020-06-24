@@ -11,7 +11,7 @@ import Foundation
 
 enum HomeConstant {
     struct Keys {
-     
+        
     }
     
     enum API {
@@ -88,14 +88,20 @@ enum HomeConstant {
         case InvalidURL
         case ParsingError
         case NoJsonFile
+        case SearchError
+        case NotFound
         var localizedDescription: String {
             switch self {
+            case .NotFound:
+                return "Movie Not Found"
             case .ParsingError:
                 return "the data could not be read in the correct format."
             case .InvalidURL:
                 return "Invalid Url Request"
-                case .NoJsonFile:
+            case .NoJsonFile:
                 return "No Json File Found"
+            case .SearchError:
+                return "Error found in searching"
             }
         }
     }

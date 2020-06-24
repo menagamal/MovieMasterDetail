@@ -26,3 +26,7 @@ enum AppConstant {
     
 }
 
+
+struct Constant {
+    static var genres = [String]()
+}

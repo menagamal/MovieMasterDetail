@@ -36,5 +36,33 @@ class MovieMasterDetailTests: XCTestCase {
         }
     }
     
+    func testSearchWithTitle() {
+        homeInteractor = HomeInteractorMock()
+        homeInteractor.parseMoviesFromLocalFile { (response) in
+            let movies = response.1
+            let comedyMovies = self.homeInteractor.searchWithGenres(str: "Comedy", items: movies)
+            for item in comedyMovies {
+                guard let geners = item.genres else {
+                    XCTFail(HomeConstant.HomeError.SearchError.localizedDescription)
+                    return
+                }
+                if !geners.contains("Comedy") {
+                    XCTFail(HomeConstant.HomeError.SearchError.localizedDescription)
+                }
+            }
+            
+        }
+    }
+    
+    func testSearchWithGenres() {
+        homeInteractor = HomeInteractorMock()
+        homeInteractor.parseMoviesFromLocalFile { (response) in
+            let movies = response.1
+            let filteredMovies = self.homeInteractor.searchWithTitle(str: "Avengers", items: movies)
+            if filteredMovies.isEmpty {
+                XCTFail(HomeConstant.HomeError.NotFound.localizedDescription)
+            }
+        }
+    }
     
 }
