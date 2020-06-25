@@ -12,12 +12,12 @@ import Foundation
 import UIKit
 
 class DetailBuilder {
-    func build(vc: DetailViewController,navigator:UINavigationController) {
+    func build(vc: DetailViewController,navigator:UINavigationController,movie:Movie) {
         
-        let interactor = DetailInteractor()
+        let interactor = DetailInteractor(movie: movie)
         let router = DetailRouter(navigationController: navigator)
         vc.presenter = DetailPresenter(interactor: interactor, router: router, view: vc)
-        
+        interactor.presenter = vc.presenter
     }
 }
 

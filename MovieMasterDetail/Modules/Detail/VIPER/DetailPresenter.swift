@@ -10,14 +10,19 @@
 
 import UIKit
 
-class DetailPresenter: DetailPresenterDelegate {
-	    
+class DetailPresenter: DetailPresenterUseCases ,DetailPresenterDelegate{
+    
+    
     private var interactor:DetailInteractor?
     private var router:DetailRouter?
     
     //MARK: TO AVOID RETAIN CYCLE
     private weak var view:DetailView?
-
+    
+    
+    //MARK: Attributes
+    private var dataSource:PhotoCollectionViewCellDataSource?
+    
     
     init(interactor:DetailInteractor,router:DetailRouter,view:DetailView) {
         self.interactor = interactor
@@ -25,8 +30,21 @@ class DetailPresenter: DetailPresenterDelegate {
         self.view = view
     }
     
-
+    func presentMovie(with movie: Movie) {
+        dataSource = PhotoCollectionViewCellDataSource(collection: self.view!.photosCollection, urls: [String]())
+    }
+    func loadDetails() {
+        interactor?.loadMovie()
+    }
+    
+    
+    
+    
 }
 protocol DetailPresenterDelegate {
+    func presentMovie(with movie:Movie)  
+}
 
+protocol DetailPresenterUseCases {
+    func loadDetails()
 }

@@ -14,7 +14,7 @@ import UIKit
 
 class HomeRouter {
    enum Destination {
-        case None
+    case Details(movie:Movie),None
     }
     
     var navigationController: UINavigationController?
@@ -44,10 +44,17 @@ class HomeRouter {
         let viewController = makeViewController(for: destination)
         navigationController?.present(viewController, animated: true) {}
     }
+    
+    func detailViewController(movie:Movie) -> DetailViewController {
+        let vc:DetailViewController = UIViewController.instanceXib()
+        DetailBuilder().build(vc: vc, navigator: self.navigationController!, movie: movie)
+        return vc
+    }
 
     func makeViewController(for destination: Destination) -> UIViewController {
         switch destination {
-     
+        case .Details(let movie):
+            return detailViewController(movie: movie)
         case .None:
             return UIViewController()
         }

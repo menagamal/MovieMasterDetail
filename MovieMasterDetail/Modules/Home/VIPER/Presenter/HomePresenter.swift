@@ -48,9 +48,9 @@ class HomePresenter: HomePresenterUseCases,HomePresenterDelegate {
 }
 
 extension HomePresenter:MovieTableViewCellDataSourceDelegate{
-    func didSelected() {
+    func didSelected(movie:Movie) {
         // Move to Details Screen
-        router?.navigate(to: .None)
+        router?.navigate(to: .Details(movie: movie))
     }
     
     

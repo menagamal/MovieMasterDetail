@@ -15,6 +15,13 @@ struct Movie : Codable {
     let genres : [String]?
     let rating : Int?
 
+    init() {
+        title = ""
+        year = 0
+        cast = [String]()
+        genres = [String]()
+        rating = 0
+    }
     enum CodingKeys: String, CodingKey {
 
         case title = "title"

@@ -14,8 +14,11 @@ class DetailViewController: UIViewController, DetailView {
 
 	var presenter: DetailPresenter?
 
-	override func viewDidLoad() {
+    @IBOutlet weak var photosCollection: UICollectionView!
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
+        presenter?.loadDetails()
     }
 
 }

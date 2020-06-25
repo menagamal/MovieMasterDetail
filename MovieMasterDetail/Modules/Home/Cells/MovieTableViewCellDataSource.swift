@@ -42,7 +42,7 @@ class MovieTableViewCellDataSource:  NSObject, UITableViewDataSource,UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegate.didSelected()
+        delegate.didSelected(movie: items[indexPath.row])
     }
     
     
@@ -51,5 +51,5 @@ class MovieTableViewCellDataSource:  NSObject, UITableViewDataSource,UITableView
 
 
 protocol MovieTableViewCellDataSourceDelegate: class {
-    func didSelected()
+    func didSelected(movie:Movie)
 }

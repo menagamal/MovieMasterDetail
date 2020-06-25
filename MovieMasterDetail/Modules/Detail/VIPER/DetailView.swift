@@ -13,5 +13,5 @@ import UIKit
 
 //MARK: View -
 protocol DetailView: class {
-
+    var photosCollection: UICollectionView! { get set }
 }
