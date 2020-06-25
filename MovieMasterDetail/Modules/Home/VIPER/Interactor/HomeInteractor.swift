@@ -96,7 +96,7 @@ class HomeInteractor: HomeUseCase {
     }
     
     func sortByTopRated(movies: [Movie]) -> [Movie] {
-        return movies
+        return movies.sorted(by: { $0.rating! > $1.rating! })
     }
     
 }
