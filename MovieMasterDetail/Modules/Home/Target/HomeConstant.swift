@@ -90,8 +90,11 @@ enum HomeConstant {
         case NoJsonFile
         case SearchError
         case NotFound
+        case SortingError
         var localizedDescription: String {
             switch self {
+            case .SortingError:
+                return "thee movies is not sorted"
             case .NotFound:
                 return "Movie Not Found"
             case .ParsingError:

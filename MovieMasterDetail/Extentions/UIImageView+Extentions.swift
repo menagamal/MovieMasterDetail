@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import SDWebImage
 extension UIImageView{
-    func setImageWithUrl(url: String, comp:@escaping((_ img:UIImage?,_ error:Error?)->Void)){
+   public func setImageWithUrl(url: String, comp:@escaping((_ img:UIImage?,_ error:Error?)->Void)){
         self.sd_setShowActivityIndicatorView(true)
         self.sd_showActivityIndicatorView()
         
@@ -28,7 +28,7 @@ extension UIImageView{
         }
     }
     
-    func mirrorImageView() {
+   public func mirrorImageView() {
         if let image = self.image {
             self.image = UIImage(cgImage: image.cgImage!, scale: image.scale , orientation: .upMirrored)
         }

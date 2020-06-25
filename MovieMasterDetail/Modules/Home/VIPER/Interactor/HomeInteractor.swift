@@ -16,6 +16,7 @@ protocol HomeUseCase {
     func parseMoviesFromLocalFile()
     func searchWithGenres(str:String,items:[Movie]) -> [Movie]
     func searchWithTitle(str:String,items:[Movie]) -> [Movie]
+    func sortByTopRated(movies:[Movie]) -> [Movie]
 }
 
 class HomeInteractor: HomeUseCase {
@@ -89,8 +90,13 @@ class HomeInteractor: HomeUseCase {
         if str.isEmpty {
             results = self.movies
         }
+        results = sortByTopRated(movies: results)
         return results
         
+    }
+    
+    func sortByTopRated(movies: [Movie]) -> [Movie] {
+        return movies
     }
     
 }

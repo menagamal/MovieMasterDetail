@@ -42,7 +42,7 @@ class MovieMasterDetailTests: XCTestCase {
         homeInteractorMock = HomeInteractorMock()
         homeInteractorMock.parseMoviesFromLocalFile { (response) in
             let movies = response.1
-            let comedyMovies = self.homeInteractor.searchWithGenres(str: "Comedy", items: movies)
+            let comedyMovies = self.homeInteractor.searchWithTitle(str: "Comedy", items: movies)
             for item in comedyMovies {
                 guard let geners = item.genres else {
                     XCTFail(HomeConstant.HomeError.SearchError.localizedDescription)
@@ -61,10 +61,27 @@ class MovieMasterDetailTests: XCTestCase {
         homeInteractorMock = HomeInteractorMock()
         homeInteractorMock.parseMoviesFromLocalFile { (response) in
             let movies = response.1
-            let filteredMovies = self.homeInteractor.searchWithTitle(str: "Avengers", items: movies)
+            let filteredMovies = self.homeInteractor.searchWithGenres(str: "Action", items: movies)
             if filteredMovies.isEmpty {
                 XCTFail(HomeConstant.HomeError.NotFound.localizedDescription)
             }
+        }
+    }
+    
+    func testSearchWithTopRated() {
+        homeInteractor = HomeInteractor()
+        homeInteractorMock = HomeInteractorMock()
+        homeInteractorMock.parseMoviesFromLocalFile { (response) in
+            let movies = response.1
+            
+            var filteredMovies = self.homeInteractor.searchWithGenres(str: "Action", items: movies)
+            filteredMovies = self.homeInteractor.sortByTopRated(movies: filteredMovies)
+            for i in 0..<filteredMovies.count - 1 {
+                if filteredMovies[i].rating! != filteredMovies[i+1].rating! {
+                    XCTAssertGreaterThan(filteredMovies[i].rating!, filteredMovies[i+1].rating!)
+                }
+            }
+            
         }
     }
     

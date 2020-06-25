@@ -10,6 +10,16 @@
 		514202478004E5CDFC2050C6 /* Pods_MovieMasterDetailTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9889FF6A0AD4CB715E9198E /* Pods_MovieMasterDetailTests.framework */; };
 		70CA05ABD066D5C73FE7E2B7 /* Pods_MovieMasterDetail.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30C1836F7BE560764EE76C6B /* Pods_MovieMasterDetail.framework */; };
 		D0C27BC324A5411600910F8A /* UIViewController+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C27BC224A5411600910F8A /* UIViewController+Extentions.swift */; };
+		D0C27BC424A54BB500910F8A /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E0444D24A4115F00AADB5A /* DetailPresenter.swift */; };
+		D0C27BC524A54BB500910F8A /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E0444E24A4115F00AADB5A /* DetailRouter.swift */; };
+		D0C27BC624A54BB500910F8A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E0444F24A4115F00AADB5A /* DetailViewController.swift */; };
+		D0C27BC724A54BB500910F8A /* DetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E0445024A4115F00AADB5A /* DetailBuilder.swift */; };
+		D0C27BC824A54BB500910F8A /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E0445124A4115F00AADB5A /* DetailInteractor.swift */; };
+		D0C27BC924A54BB500910F8A /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E0445224A4115F00AADB5A /* DetailView.swift */; };
+		D0C27BCA24A54BB500910F8A /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0E0445324A4115F00AADB5A /* DetailViewController.xib */; };
+		D0C27BCB24A54BD200910F8A /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E8B4B724A53D31005A9296 /* PhotoCollectionViewCell.swift */; };
+		D0C27BCC24A54BD200910F8A /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0E8B4B824A53D31005A9296 /* PhotoCollectionViewCell.xib */; };
+		D0C27BCD24A54BD200910F8A /* PhotoCollectionViewCellDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E8B4BD24A53F0B005A9296 /* PhotoCollectionViewCellDataSource.swift */; };
 		D0E0443724A3EC6400AADB5A /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E0443524A3EC6400AADB5A /* MovieTableViewCell.swift */; };
 		D0E0443824A3EC6400AADB5A /* MovieTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0E0443624A3EC6400AADB5A /* MovieTableViewCell.xib */; };
 		D0E0443A24A3ECC700AADB5A /* MovieTableViewCellDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E0443924A3ECC700AADB5A /* MovieTableViewCellDataSource.swift */; };
@@ -466,7 +476,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0C27BCC24A54BD200910F8A /* PhotoCollectionViewCell.xib in Resources */,
 				D0E1241524A3D11A00F22F6B /* movies.json in Resources */,
+				D0C27BCA24A54BB500910F8A /* DetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,17 +585,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0C27BC524A54BB500910F8A /* DetailRouter.swift in Sources */,
+				D0C27BCB24A54BD200910F8A /* PhotoCollectionViewCell.swift in Sources */,
 				D0E123EB24A3C92C00F22F6B /* MovieMasterDetailTests.swift in Sources */,
 				D0E0443E24A3FB7B00AADB5A /* AppConstants.swift in Sources */,
+				D0C27BC824A54BB500910F8A /* DetailInteractor.swift in Sources */,
 				D0E0444024A3FC9200AADB5A /* Array.swift in Sources */,
 				D0E1241D24A3D5BE00F22F6B /* HomeInteractorMock.swift in Sources */,
 				D0E1241A24A3D54400F22F6B /* MoviesResponse.swift in Sources */,
+				D0C27BC424A54BB500910F8A /* DetailPresenter.swift in Sources */,
+				D0C27BC624A54BB500910F8A /* DetailViewController.swift in Sources */,
 				D0E1241E24A3D73100F22F6B /* HomeInteractor.swift in Sources */,
+				D0C27BCD24A54BD200910F8A /* PhotoCollectionViewCellDataSource.swift in Sources */,
 				D0E1241B24A3D54600F22F6B /* Movie.swift in Sources */,
 				D0E0444324A3FCAD00AADB5A /* HomeConstant.swift in Sources */,
 				D0E0444724A3FCD200AADB5A /* MovieTableViewCellDataSource.swift in Sources */,
 				D0E0444524A3FCC500AADB5A /* HomeView.swift in Sources */,
 				D0E0444124A3FC9800AADB5A /* HomePresenter.swift in Sources */,
+				D0C27BC724A54BB500910F8A /* DetailBuilder.swift in Sources */,
+				D0C27BC924A54BB500910F8A /* DetailView.swift in Sources */,
 				D0E0444424A3FCC500AADB5A /* HomeRouter.swift in Sources */,
 				D0E0444624A3FCD200AADB5A /* MovieTableViewCell.swift in Sources */,
 			);
