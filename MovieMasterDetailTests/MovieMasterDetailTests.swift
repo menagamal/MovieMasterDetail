@@ -12,7 +12,8 @@ import XCTest
 class MovieMasterDetailTests: XCTestCase {
     
     var homeInteractorMock:HomeInteractorMock!
-    var homeInteractor:HomeInteractor!
+    var homeInteractor:HomeInteractor!  
+    var detailMock:DetailInteractorMock!
     
     func testFetchJsonFromLocalFile() throws {
         let bundle = Bundle(for: type(of: self))
@@ -29,11 +30,11 @@ class MovieMasterDetailTests: XCTestCase {
             if let error = response.0 as? HomeConstant.HomeError {
                 XCTFail(error.localizedDescription)
             }
-            if let movies = response.1 as? [Movie] {
-                if movies.isEmpty {
-                    XCTFail(HomeConstant.HomeError.ParsingError.localizedDescription)
-                }
+            let movies = response.1
+            if movies.isEmpty {
+                XCTFail(HomeConstant.HomeError.ParsingError.localizedDescription)
             }
+            
         }
     }
     
@@ -84,5 +85,46 @@ class MovieMasterDetailTests: XCTestCase {
             
         }
     }
+    
+    func testGetPhotosApiParsing() {
+        detailMock = DetailInteractorMock()
+        let photos = parsePhotosFromMock()
+        XCTAssertEqual(photos.count, 2)
+        
+    }
+    private func parsePhotosFromMock() -> [Photo] {
+        var photos = [Photo]()
+        homeInteractorMock = HomeInteractorMock()
+        homeInteractorMock.parseMoviesFromLocalFile { (response) in
+            let movies = response.1
+            self.detailMock.loadObjectMock(movie: movies.first!) { (response) in
+                if let error = response.0 {
+                    XCTFail(error.localizedDescription)
+                }
+                photos = response.1
+            }
+        }
+        return photos
+    }
+    
+    func testValidUrlBuilder() {
+        detailMock = DetailInteractorMock()
+        let photos = parsePhotosFromMock()
+        let urlStr = self.detailMock.photoUrlBuilder(photo: photos[1])
+        
+        
+        let imageView = UIImageView()
+        if let url = URL(string: urlStr) {
+            imageView.sd_setImage(with: url) { (img, err, typ, ur) in
+                XCTAssertNil(err)
+            }
+        } else {
+            XCTFail()
+        }
+        
+        
+    }
+    
+    
     
 }

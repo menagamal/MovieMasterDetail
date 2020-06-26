@@ -12,9 +12,12 @@ import Foundation
 
 protocol DetailUseCase {
     func loadMovie()
+    func loadMoviePhotos()
+    func photoUrlBuilder( photo: Photo) -> String
 }
 
 class DetailInteractor: DetailUseCase {
+    
     
     private var movie:Movie?
     var presenter:DetailPresenterDelegate?
@@ -29,5 +32,11 @@ class DetailInteractor: DetailUseCase {
         presenter?.presentMovie(with: movie ?? Movie())
     }
     
+    func loadMoviePhotos() {
+        
+    }
+    func photoUrlBuilder(photo: Photo) -> String {
+        return "http://farm​\(photo.farm!)​.static.flickr.com/\(photo.server!)​/\(photo.id!)​_​\(photo.secret!)​.jpg"
+    }
     
 }

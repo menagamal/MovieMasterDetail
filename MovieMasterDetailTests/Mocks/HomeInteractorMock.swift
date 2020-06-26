@@ -39,7 +39,6 @@ class HomeInteractorMock: HomeMockUseCase {
 
 protocol HomeMockUseCase {
     func parseMoviesFromLocalFile(completation: @escaping ((ServicesResponse) -> Void))
-   
 }
 
 

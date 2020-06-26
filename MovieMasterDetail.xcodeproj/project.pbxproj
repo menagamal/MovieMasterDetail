@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		514202478004E5CDFC2050C6 /* Pods_MovieMasterDetailTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9889FF6A0AD4CB715E9198E /* Pods_MovieMasterDetailTests.framework */; };
 		70CA05ABD066D5C73FE7E2B7 /* Pods_MovieMasterDetail.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30C1836F7BE560764EE76C6B /* Pods_MovieMasterDetail.framework */; };
+		D013DC6524A6B0DF00740C94 /* PhotoApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D013DC6424A6B0DF00740C94 /* PhotoApiResponse.swift */; };
+		D013DC6624A6B0F600740C94 /* PhotoApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D013DC6424A6B0DF00740C94 /* PhotoApiResponse.swift */; };
+		D013DC6724A6B12F00740C94 /* PhotoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F48E8224A682EF00C7147B /* PhotoResponse.swift */; };
+		D013DC6824A6B15000740C94 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F48E8024A682E100C7147B /* Photo.swift */; };
+		D013DC6924A6B34A00740C94 /* UIImageView+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E8B4BB24A53E65005A9296 /* UIImageView+Extentions.swift */; };
 		D0C27BC324A5411600910F8A /* UIViewController+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C27BC224A5411600910F8A /* UIViewController+Extentions.swift */; };
 		D0C27BC424A54BB500910F8A /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E0444D24A4115F00AADB5A /* DetailPresenter.swift */; };
 		D0C27BC524A54BB500910F8A /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E0444E24A4115F00AADB5A /* DetailRouter.swift */; };
@@ -65,6 +70,13 @@
 		D0E8B4BA24A53D31005A9296 /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0E8B4B824A53D31005A9296 /* PhotoCollectionViewCell.xib */; };
 		D0E8B4BC24A53E65005A9296 /* UIImageView+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E8B4BB24A53E65005A9296 /* UIImageView+Extentions.swift */; };
 		D0E8B4BE24A53F0B005A9296 /* PhotoCollectionViewCellDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E8B4BD24A53F0B005A9296 /* PhotoCollectionViewCellDataSource.swift */; };
+		D0F48E8124A682E100C7147B /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F48E8024A682E100C7147B /* Photo.swift */; };
+		D0F48E8324A682EF00C7147B /* PhotoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F48E8224A682EF00C7147B /* PhotoResponse.swift */; };
+		D0F48E8524A6839300C7147B /* DetailTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F48E8424A6839300C7147B /* DetailTarget.swift */; };
+		D0F48E8724A683D000C7147B /* DetailConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F48E8624A683D000C7147B /* DetailConstant.swift */; };
+		D0F48E8924A6AB6100C7147B /* DetailInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F48E8824A6AB6100C7147B /* DetailInteractorMock.swift */; };
+		D0F48E8A24A6ABE200C7147B /* DetailTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F48E8424A6839300C7147B /* DetailTarget.swift */; };
+		D0F48E8B24A6ACC400C7147B /* DetailConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F48E8624A683D000C7147B /* DetailConstant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +94,7 @@
 		362198F965024DCAAFC518AF /* Pods-MovieMasterDetail.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieMasterDetail.debug.xcconfig"; path = "Target Support Files/Pods-MovieMasterDetail/Pods-MovieMasterDetail.debug.xcconfig"; sourceTree = "<group>"; };
 		5AD7A3BDC4459D18D1B9B80F /* Pods-MovieMasterDetailTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieMasterDetailTests.release.xcconfig"; path = "Target Support Files/Pods-MovieMasterDetailTests/Pods-MovieMasterDetailTests.release.xcconfig"; sourceTree = "<group>"; };
 		B9889FF6A0AD4CB715E9198E /* Pods_MovieMasterDetailTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieMasterDetailTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D013DC6424A6B0DF00740C94 /* PhotoApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoApiResponse.swift; sourceTree = "<group>"; };
 		D0C27BC224A5411600910F8A /* UIViewController+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extentions.swift"; sourceTree = "<group>"; };
 		D0E0443524A3EC6400AADB5A /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		D0E0443624A3EC6400AADB5A /* MovieTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieTableViewCell.xib; sourceTree = "<group>"; };
@@ -120,6 +133,11 @@
 		D0E8B4B824A53D31005A9296 /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCollectionViewCell.xib; sourceTree = "<group>"; };
 		D0E8B4BB24A53E65005A9296 /* UIImageView+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extentions.swift"; sourceTree = "<group>"; };
 		D0E8B4BD24A53F0B005A9296 /* PhotoCollectionViewCellDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCellDataSource.swift; sourceTree = "<group>"; };
+		D0F48E8024A682E100C7147B /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		D0F48E8224A682EF00C7147B /* PhotoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoResponse.swift; sourceTree = "<group>"; };
+		D0F48E8424A6839300C7147B /* DetailTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTarget.swift; sourceTree = "<group>"; };
+		D0F48E8624A683D000C7147B /* DetailConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailConstant.swift; sourceTree = "<group>"; };
+		D0F48E8824A6AB6100C7147B /* DetailInteractorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractorMock.swift; sourceTree = "<group>"; };
 		D3A6244D424E6158569F39E5 /* Pods-MovieMasterDetailTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieMasterDetailTests.debug.xcconfig"; path = "Target Support Files/Pods-MovieMasterDetailTests/Pods-MovieMasterDetailTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DD34A05A73C2BE096FD1A6B4 /* Pods-MovieMasterDetail.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieMasterDetail.release.xcconfig"; path = "Target Support Files/Pods-MovieMasterDetail/Pods-MovieMasterDetail.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -257,9 +275,9 @@
 		D0E123E924A3C92C00F22F6B /* MovieMasterDetailTests */ = {
 			isa = PBXGroup;
 			children = (
+				D0F48E8C24A6AE1E00C7147B /* Mocks */,
 				D0E123EA24A3C92C00F22F6B /* MovieMasterDetailTests.swift */,
 				D0E123EC24A3C92C00F22F6B /* Info.plist */,
-				D0E1241C24A3D5BE00F22F6B /* HomeInteractorMock.swift */,
 			);
 			path = MovieMasterDetailTests;
 			sourceTree = "<group>";
@@ -367,15 +385,77 @@
 		D0E8B4B524A53B43005A9296 /* VIPER */ = {
 			isa = PBXGroup;
 			children = (
-				D0E0444D24A4115F00AADB5A /* DetailPresenter.swift */,
-				D0E0444E24A4115F00AADB5A /* DetailRouter.swift */,
-				D0E0444F24A4115F00AADB5A /* DetailViewController.swift */,
+				D0F48E7F24A6828D00C7147B /* Target */,
+				D0F48E7E24A6825800C7147B /* View */,
+				D0F48E7D24A6824B00C7147B /* Interactor */,
+				D0F48E7C24A6824400C7147B /* Presenter */,
+				D0F48E7B24A6823D00C7147B /* Entity */,
+				D0F48E7A24A6823200C7147B /* Router */,
 				D0E0445024A4115F00AADB5A /* DetailBuilder.swift */,
+			);
+			path = VIPER;
+			sourceTree = "<group>";
+		};
+		D0F48E7A24A6823200C7147B /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				D0E0444E24A4115F00AADB5A /* DetailRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		D0F48E7B24A6823D00C7147B /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				D0F48E8024A682E100C7147B /* Photo.swift */,
+				D0F48E8224A682EF00C7147B /* PhotoResponse.swift */,
+				D013DC6424A6B0DF00740C94 /* PhotoApiResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		D0F48E7C24A6824400C7147B /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D0E0444D24A4115F00AADB5A /* DetailPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		D0F48E7D24A6824B00C7147B /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
 				D0E0445124A4115F00AADB5A /* DetailInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		D0F48E7E24A6825800C7147B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D0E0444F24A4115F00AADB5A /* DetailViewController.swift */,
 				D0E0445224A4115F00AADB5A /* DetailView.swift */,
 				D0E0445324A4115F00AADB5A /* DetailViewController.xib */,
 			);
-			path = VIPER;
+			path = View;
+			sourceTree = "<group>";
+		};
+		D0F48E7F24A6828D00C7147B /* Target */ = {
+			isa = PBXGroup;
+			children = (
+				D0F48E8424A6839300C7147B /* DetailTarget.swift */,
+				D0F48E8624A683D000C7147B /* DetailConstant.swift */,
+			);
+			path = Target;
+			sourceTree = "<group>";
+		};
+		D0F48E8C24A6AE1E00C7147B /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				D0E1241C24A3D5BE00F22F6B /* HomeInteractorMock.swift */,
+				D0F48E8824A6AB6100C7147B /* DetailInteractorMock.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -408,6 +488,7 @@
 				D0E123E224A3C92C00F22F6B /* Sources */,
 				D0E123E324A3C92C00F22F6B /* Frameworks */,
 				D0E123E424A3C92C00F22F6B /* Resources */,
+				289358F0B1545807B9F9004E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -485,6 +566,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		289358F0B1545807B9F9004E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MovieMasterDetailTests/Pods-MovieMasterDetailTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MovieMasterDetailTests/Pods-MovieMasterDetailTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MovieMasterDetailTests/Pods-MovieMasterDetailTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		2AF91FA61E0FCC66143BFC73 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -559,13 +657,18 @@
 				D0E8B4BC24A53E65005A9296 /* UIImageView+Extentions.swift in Sources */,
 				D0E1241724A3D50B00F22F6B /* Movie.swift in Sources */,
 				D0E1240124A3CC3600F22F6B /* HomePresenter.swift in Sources */,
+				D0F48E8124A682E100C7147B /* Photo.swift in Sources */,
 				D0E0443D24A3FABA00AADB5A /* Array.swift in Sources */,
+				D013DC6524A6B0DF00740C94 /* PhotoApiResponse.swift in Sources */,
 				D0E1241224A3CD5000F22F6B /* AppConstants.swift in Sources */,
+				D0F48E8324A682EF00C7147B /* PhotoResponse.swift in Sources */,
 				D0E1240224A3CC3600F22F6B /* HomeRouter.swift in Sources */,
 				D0E123D424A3C92A00F22F6B /* AppDelegate.swift in Sources */,
+				D0F48E8724A683D000C7147B /* DetailConstant.swift in Sources */,
 				D0E8B4B924A53D31005A9296 /* PhotoCollectionViewCell.swift in Sources */,
 				D0E0445624A4115F00AADB5A /* DetailViewController.swift in Sources */,
 				D0E0445924A4115F00AADB5A /* DetailView.swift in Sources */,
+				D0F48E8524A6839300C7147B /* DetailTarget.swift in Sources */,
 				D0C27BC324A5411600910F8A /* UIViewController+Extentions.swift in Sources */,
 				D0E1240624A3CC3600F22F6B /* HomeView.swift in Sources */,
 				D0E8B4BE24A53F0B005A9296 /* PhotoCollectionViewCellDataSource.swift in Sources */,
@@ -588,6 +691,9 @@
 				D0C27BC524A54BB500910F8A /* DetailRouter.swift in Sources */,
 				D0C27BCB24A54BD200910F8A /* PhotoCollectionViewCell.swift in Sources */,
 				D0E123EB24A3C92C00F22F6B /* MovieMasterDetailTests.swift in Sources */,
+				D013DC6824A6B15000740C94 /* Photo.swift in Sources */,
+				D013DC6724A6B12F00740C94 /* PhotoResponse.swift in Sources */,
+				D0F48E8924A6AB6100C7147B /* DetailInteractorMock.swift in Sources */,
 				D0E0443E24A3FB7B00AADB5A /* AppConstants.swift in Sources */,
 				D0C27BC824A54BB500910F8A /* DetailInteractor.swift in Sources */,
 				D0E0444024A3FC9200AADB5A /* Array.swift in Sources */,
@@ -595,14 +701,18 @@
 				D0E1241A24A3D54400F22F6B /* MoviesResponse.swift in Sources */,
 				D0C27BC424A54BB500910F8A /* DetailPresenter.swift in Sources */,
 				D0C27BC624A54BB500910F8A /* DetailViewController.swift in Sources */,
+				D0F48E8A24A6ABE200C7147B /* DetailTarget.swift in Sources */,
 				D0E1241E24A3D73100F22F6B /* HomeInteractor.swift in Sources */,
 				D0C27BCD24A54BD200910F8A /* PhotoCollectionViewCellDataSource.swift in Sources */,
 				D0E1241B24A3D54600F22F6B /* Movie.swift in Sources */,
 				D0E0444324A3FCAD00AADB5A /* HomeConstant.swift in Sources */,
 				D0E0444724A3FCD200AADB5A /* MovieTableViewCellDataSource.swift in Sources */,
 				D0E0444524A3FCC500AADB5A /* HomeView.swift in Sources */,
+				D013DC6624A6B0F600740C94 /* PhotoApiResponse.swift in Sources */,
 				D0E0444124A3FC9800AADB5A /* HomePresenter.swift in Sources */,
 				D0C27BC724A54BB500910F8A /* DetailBuilder.swift in Sources */,
+				D013DC6924A6B34A00740C94 /* UIImageView+Extentions.swift in Sources */,
+				D0F48E8B24A6ACC400C7147B /* DetailConstant.swift in Sources */,
 				D0C27BC924A54BB500910F8A /* DetailView.swift in Sources */,
 				D0E0444424A3FCC500AADB5A /* HomeRouter.swift in Sources */,
 				D0E0444624A3FCD200AADB5A /* MovieTableViewCell.swift in Sources */,

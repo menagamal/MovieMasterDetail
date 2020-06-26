@@ -14,6 +14,7 @@ target 'MovieMasterDetail' do
   
   target 'MovieMasterDetailTests' do
     inherit! :search_paths
+    pod 'SDWebImage', '~> 4.0'
     # Pods for testing
   end
   
