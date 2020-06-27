@@ -12,7 +12,7 @@ import Foundation
 
 enum AppConstant {
     enum API {
-        static let BaseUrl = ""
+        static let BaseUrl = "https://api.flickr.com/"
         enum Codes: Int {
             case success = 200
             case failed = 404

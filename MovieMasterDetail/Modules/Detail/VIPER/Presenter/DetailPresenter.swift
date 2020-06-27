@@ -9,10 +9,9 @@
 //
 
 import UIKit
-
-class DetailPresenter: DetailPresenterUseCases ,DetailPresenterDelegate{
-    
-    
+import Cosmos
+class DetailPresenter: DetailPresenterUseCases {
+     
     private var interactor:DetailInteractor?
     private var router:DetailRouter?
     
@@ -30,19 +29,52 @@ class DetailPresenter: DetailPresenterUseCases ,DetailPresenterDelegate{
         self.view = view
     }
     
-    func presentMovie(with movie: Movie) {
-        dataSource = PhotoCollectionViewCellDataSource(collection: self.view!.photosCollection, urls: [String]())
-    }
+    
     func loadDetails() {
         interactor?.loadMovie()
     }
-    
-    
-    
+    func loadPhotos()  {
+        interactor?.loadMoviePhotos()
+    }
     
 }
+
+extension DetailPresenter :DetailPresenterDelegate{
+    func imagesUrl(with urls: [NSURL]) {
+        var photosUrls = urls
+        if !photosUrls.isEmpty {
+            let first = photosUrls.first!
+            self.view?.mainImageView!.sd_setImage(with: first as URL?, completed: { (img, e, s, u) in
+
+            })
+            photosUrls.removeFirst()
+            dataSource = PhotoCollectionViewCellDataSource(collection: self.view!.photosCollection, urls: photosUrls)
+        }
+    }
+    
+    func failedToLoad(message: String) {
+        
+    }
+    func presentMovie(with movie: Movie) {
+        self.view?.labelTitle.text = movie.title!
+        var cast = ""
+        var geners = ""
+        for item in movie.cast! {
+            cast = cast + " \(item)"
+        }
+        for item in movie.genres! {
+            geners = geners + " \(item)"
+        }
+        self.view?.labelCast.text = cast
+        self.view?.labelYear.text = "\(movie.year!)"
+        self.view?.labelGeners.text = geners
+        self.view?.ratingView.rating = Double(movie.rating!)
+    }
+}
 protocol DetailPresenterDelegate {
-    func presentMovie(with movie:Movie)  
+    func presentMovie(with movie:Movie)
+    func imagesUrl(with urls:[NSURL])
+    func failedToLoad(message:String)
 }
 
 protocol DetailPresenterUseCases {

@@ -14,6 +14,10 @@
 		D013DC6724A6B12F00740C94 /* PhotoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F48E8224A682EF00C7147B /* PhotoResponse.swift */; };
 		D013DC6824A6B15000740C94 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F48E8024A682E100C7147B /* Photo.swift */; };
 		D013DC6924A6B34A00740C94 /* UIImageView+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E8B4BB24A53E65005A9296 /* UIImageView+Extentions.swift */; };
+		D013DC6B24A6C66B00740C94 /* QueryArrayEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D013DC6A24A6C66B00740C94 /* QueryArrayEncoding.swift */; };
+		D013DC6C24A6D21300740C94 /* DetailInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F48E8824A6AB6100C7147B /* DetailInteractorMock.swift */; };
+		D0A3AA7424A7810C00C133D6 /* CHTCollectionViewWaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A3AA7324A7810C00C133D6 /* CHTCollectionViewWaterfallLayout.swift */; };
+		D0A3AA7624A7CE9D00C133D6 /* UIColor+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A3AA7524A7CE9D00C133D6 /* UIColor+Extentions.swift */; };
 		D0C27BC324A5411600910F8A /* UIViewController+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C27BC224A5411600910F8A /* UIViewController+Extentions.swift */; };
 		D0C27BC424A54BB500910F8A /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E0444D24A4115F00AADB5A /* DetailPresenter.swift */; };
 		D0C27BC524A54BB500910F8A /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E0444E24A4115F00AADB5A /* DetailRouter.swift */; };
@@ -95,6 +99,9 @@
 		5AD7A3BDC4459D18D1B9B80F /* Pods-MovieMasterDetailTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieMasterDetailTests.release.xcconfig"; path = "Target Support Files/Pods-MovieMasterDetailTests/Pods-MovieMasterDetailTests.release.xcconfig"; sourceTree = "<group>"; };
 		B9889FF6A0AD4CB715E9198E /* Pods_MovieMasterDetailTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieMasterDetailTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D013DC6424A6B0DF00740C94 /* PhotoApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoApiResponse.swift; sourceTree = "<group>"; };
+		D013DC6A24A6C66B00740C94 /* QueryArrayEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryArrayEncoding.swift; sourceTree = "<group>"; };
+		D0A3AA7324A7810C00C133D6 /* CHTCollectionViewWaterfallLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHTCollectionViewWaterfallLayout.swift; sourceTree = "<group>"; };
+		D0A3AA7524A7CE9D00C133D6 /* UIColor+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extentions.swift"; sourceTree = "<group>"; };
 		D0C27BC224A5411600910F8A /* UIViewController+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extentions.swift"; sourceTree = "<group>"; };
 		D0E0443524A3EC6400AADB5A /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		D0E0443624A3EC6400AADB5A /* MovieTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieTableViewCell.xib; sourceTree = "<group>"; };
@@ -182,12 +189,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D0A3AA7224A780F200C133D6 /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				D0A3AA7324A7810C00C133D6 /* CHTCollectionViewWaterfallLayout.swift */,
+			);
+			path = Widgets;
+			sourceTree = "<group>";
+		};
 		D0E0443B24A3FAAC00AADB5A /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
 				D0E0443C24A3FABA00AADB5A /* Array.swift */,
 				D0E8B4BB24A53E65005A9296 /* UIImageView+Extentions.swift */,
 				D0C27BC224A5411600910F8A /* UIViewController+Extentions.swift */,
+				D0A3AA7524A7CE9D00C133D6 /* UIColor+Extentions.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -229,7 +245,6 @@
 			isa = PBXGroup;
 			children = (
 				D0E8B4B524A53B43005A9296 /* VIPER */,
-				D0E8B4B424A53B39005A9296 /* Target */,
 				D0E8B4B324A53B30005A9296 /* Cells */,
 			);
 			path = Detail;
@@ -258,6 +273,7 @@
 		D0E123D224A3C92A00F22F6B /* MovieMasterDetail */ = {
 			isa = PBXGroup;
 			children = (
+				D0A3AA7224A780F200C133D6 /* Widgets */,
 				D0E0443B24A3FAAC00AADB5A /* Extentions */,
 				D0E1241024A3CD3D00F22F6B /* Constants */,
 				D0E123F824A3CC2500F22F6B /* Modules */,
@@ -353,6 +369,7 @@
 			isa = PBXGroup;
 			children = (
 				D0E1241124A3CD5000F22F6B /* AppConstants.swift */,
+				D013DC6A24A6C66B00740C94 /* QueryArrayEncoding.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -373,13 +390,6 @@
 				D0E8B4BD24A53F0B005A9296 /* PhotoCollectionViewCellDataSource.swift */,
 			);
 			path = Cells;
-			sourceTree = "<group>";
-		};
-		D0E8B4B424A53B39005A9296 /* Target */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Target;
 			sourceTree = "<group>";
 		};
 		D0E8B4B524A53B43005A9296 /* VIPER */ = {
@@ -664,6 +674,7 @@
 				D0F48E8324A682EF00C7147B /* PhotoResponse.swift in Sources */,
 				D0E1240224A3CC3600F22F6B /* HomeRouter.swift in Sources */,
 				D0E123D424A3C92A00F22F6B /* AppDelegate.swift in Sources */,
+				D013DC6C24A6D21300740C94 /* DetailInteractorMock.swift in Sources */,
 				D0F48E8724A683D000C7147B /* DetailConstant.swift in Sources */,
 				D0E8B4B924A53D31005A9296 /* PhotoCollectionViewCell.swift in Sources */,
 				D0E0445624A4115F00AADB5A /* DetailViewController.swift in Sources */,
@@ -673,7 +684,10 @@
 				D0E1240624A3CC3600F22F6B /* HomeView.swift in Sources */,
 				D0E8B4BE24A53F0B005A9296 /* PhotoCollectionViewCellDataSource.swift in Sources */,
 				D0E0445824A4115F00AADB5A /* DetailInteractor.swift in Sources */,
+				D0A3AA7424A7810C00C133D6 /* CHTCollectionViewWaterfallLayout.swift in Sources */,
+				D0A3AA7624A7CE9D00C133D6 /* UIColor+Extentions.swift in Sources */,
 				D0E123D624A3C92A00F22F6B /* SceneDelegate.swift in Sources */,
+				D013DC6B24A6C66B00740C94 /* QueryArrayEncoding.swift in Sources */,
 				D0E0445424A4115F00AADB5A /* DetailPresenter.swift in Sources */,
 				D0E0445724A4115F00AADB5A /* DetailBuilder.swift in Sources */,
 				D0E1240F24A3CD0300F22F6B /* HomeConstant.swift in Sources */,

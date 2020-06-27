@@ -11,7 +11,7 @@ target 'MovieMasterDetail' do
   pod 'IQKeyboardManagerSwift'
   pod 'SDWebImage', '~> 4.0'
   pod 'WaterfallLayout', '~> 0.1'
-  
+  pod 'Cosmos', '~> 22.1'
   target 'MovieMasterDetailTests' do
     inherit! :search_paths
     pod 'SDWebImage', '~> 4.0'

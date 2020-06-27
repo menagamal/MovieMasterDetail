@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.9.1)
+  - Cosmos (22.1.0)
   - IQKeyboardManagerSwift (6.5.4)
   - Moya (13.0.1):
     - Moya/Core (= 13.0.1)
@@ -13,6 +14,7 @@ PODS:
   - WaterfallLayout (0.2)
 
 DEPENDENCIES:
+  - Cosmos (~> 22.1)
   - IQKeyboardManagerSwift
   - Moya
   - SDWebImage (~> 4.0)
@@ -21,6 +23,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - Cosmos
     - IQKeyboardManagerSwift
     - Moya
     - Result
@@ -29,12 +32,13 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  Cosmos: 2795b36ad4bbea1af3050d6d65576ed63875f86a
   IQKeyboardManagerSwift: 2dde0fc70110e8eac7ccce2a46fdbec6a850b414
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   SDWebImage: c10d14a8883ebd89664f02a422006f66a85c0c5d
   WaterfallLayout: 030e04b041e5c6c47ae2c1eaa685c60289fab0b1
 
-PODFILE CHECKSUM: de625efa06f05d5d48222814b2aca847ead8152d
+PODFILE CHECKSUM: 6243ced7b77ab5e95448eb2d554ae342e793ad81
 
 COCOAPODS: 1.9.1

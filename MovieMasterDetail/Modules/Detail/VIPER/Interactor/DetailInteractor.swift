@@ -9,11 +9,12 @@
 //
 
 import Foundation
+import Moya
 
 protocol DetailUseCase {
     func loadMovie()
     func loadMoviePhotos()
-    func photoUrlBuilder( photo: Photo) -> String
+    func photoUrlBuilder( photo: Photo) -> NSURL
 }
 
 class DetailInteractor: DetailUseCase {
@@ -21,22 +22,58 @@ class DetailInteractor: DetailUseCase {
     
     private var movie:Movie?
     var presenter:DetailPresenterDelegate?
+    private var provider = MoyaProvider<DetailTarget>(callbackQueue: DispatchQueue.global(qos: .utility))
     
     
     init(movie:Movie) {
         self.movie = movie
         
     }
+    
+    
     func loadMovie()  {
         // If there is any logic done on the object before passing it to the presenter
         presenter?.presentMovie(with: movie ?? Movie())
     }
     
     func loadMoviePhotos() {
-        
+        provider.request(.getMoviePhotos(movei: movie!)) { result in
+            switch(result) {
+            case .success(let response):
+                DispatchQueue.main.async {
+                    do {
+                        if response.statusCode == AppConstant.API.Codes.success.rawValue {
+                            
+                            let responseModel: PhotoApiResponse = try response.map(PhotoApiResponse.self)
+                            var urls = [NSURL]()
+                            for item in (responseModel.photos?.photo)! {
+                                let url = self.photoUrlBuilder(photo: item)
+                                urls.append(url)
+                            }
+                            self.presenter?.imagesUrl(with: urls)
+                        } else {
+                            self.presenter?.failedToLoad(message: DetailConstant.DetailError.InvalidURL.localizedDescription)
+                        }
+                    } catch{
+                        self.presenter?.failedToLoad(message: DetailConstant.DetailError.ParsingError.localizedDescription)
+                    }
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self.presenter?.failedToLoad(message: error.localizedDescription)
+                }
+            }
+        }
     }
-    func photoUrlBuilder(photo: Photo) -> String {
-        return "http://farm​\(photo.farm!)​.static.flickr.com/\(photo.server!)​/\(photo.id!)​_​\(photo.secret!)​.jpg"
+    
+    func photoUrlBuilder(photo: Photo) -> NSURL {
+        let farm = Int(photo.farm!)
+               let server = Int(photo.server!)!
+               let id = Int(photo.id!)!
+               let secret = photo.secret!
+               
+               
+        return NSURL(string: "https://farm\(farm).staticflickr.com/\(server)/\(id)_\(secret)_m.jpg")!
     }
     
 }

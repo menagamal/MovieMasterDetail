@@ -12,12 +12,14 @@ class PhotoCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var photoIImageView: UIImageView!
     
-    func setDetails(url:String)  {
-        photoIImageView.setImageWithUrl(url: url) { (img, error) in
+    func setDetails(url:NSURL)  {
+        
+        self.photoIImageView.sd_setImage(with: url as URL?, completed: { (img, error, s, u) in
             if error == nil {
                 // delegate the image to object
             }
-        }
+        })
+
     }
 
 }

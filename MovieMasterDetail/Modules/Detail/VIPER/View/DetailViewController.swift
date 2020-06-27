@@ -9,16 +9,29 @@
 //
 
 import UIKit
+import Cosmos
 
 class DetailViewController: UIViewController, DetailView {
 
 	var presenter: DetailPresenter?
 
+    @IBOutlet weak var ratingView: CosmosView!
+    @IBOutlet weak var mainImageView: UIImageView!
+    
     @IBOutlet weak var photosCollection: UICollectionView!
+    @IBOutlet weak var labelTitle: UILabel!
+    @IBOutlet weak var labelYear: UILabel!
+    @IBOutlet weak var labelGeners: UILabel!
+    @IBOutlet weak var labelCast: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController!.navigationBar.tintColor = UIColor(hexString: "#FF0E5E")
+        
+        
         presenter?.loadDetails()
+        presenter?.loadPhotos()
     }
 
 }

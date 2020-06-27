@@ -17,7 +17,7 @@ class DetailInteractorMock: DetailInteractorMockUseCases {
     
     
     func loadObjectMock(movie: Movie, completation: @escaping ((PhotosCompetationResponse) -> Void))  {
-        let temp = DetailTarget.getMoviePhotos.sampleData
+        let temp = DetailTarget.getMoviePhotos(movei: movie).sampleData
         do {
             let responseModel: PhotoApiResponse = try JSONDecoder().decode(PhotoApiResponse.self, from: temp)
             
@@ -31,7 +31,7 @@ class DetailInteractorMock: DetailInteractorMockUseCases {
         let server = Int(photo.server!)!
         let id = Int(photo.id!)!
         let secret = photo.secret!
-        let url = "https://farm​\(farm)​.static.flickr.com/\(server)​/\(id)​_​\(secret)​.jpg"
+        let url = "https://farm​\(farm)​.staticflickr.com/\(server)​/\(id)​_​\(secret)​.jpg"
         if let encoded = url.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) {
             return encoded
         }

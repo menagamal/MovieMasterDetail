@@ -10,15 +10,28 @@
 import Foundation
 
 enum DetailConstant {
+    
     struct Keys {
-        // API keys incase it was a POST request.
+        
+        static let method = "method"
+        static  let apiKey = "api_key"
+        static let format = "format"
+        static  let text = "text"
+        static   let nojsoncallback = "nojsoncallback"
+        static  let tags = "tags"
+    }
+    struct Values {
+        static  let APIKEY = "80e8c345015df0093f6515d495faa294"
+        static  let METHOD = "flickr.photos.search"
+        static let FORMAT = "json"
+        static let JSONCALLBACK = 1
         
     }
     
     
     enum API {
         enum getMoviePhotos {
-            static let endPoint = "services/rest/?method=flickr.photos.search"
+            static let endPoint = "services/rest/"
             static let SampleData =
             """
             {

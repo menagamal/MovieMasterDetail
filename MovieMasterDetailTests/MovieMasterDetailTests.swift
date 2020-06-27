@@ -116,6 +116,9 @@ class MovieMasterDetailTests: XCTestCase {
         let imageView = UIImageView()
         if let url = URL(string: urlStr) {
             imageView.sd_setImage(with: url) { (img, err, typ, ur) in
+                XCTFail()
+
+                print(err)
                 XCTAssertNil(err)
             }
         } else {

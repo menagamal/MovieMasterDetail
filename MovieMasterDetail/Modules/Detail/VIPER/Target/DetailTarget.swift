@@ -13,7 +13,7 @@ import Moya
 typealias MoyaMethod = Moya.Method
 
 enum DetailTarget {
-    case getMoviePhotos
+    case getMoviePhotos(movei:Movie)
 }
 
 extension DetailTarget: TargetType {
@@ -48,8 +48,20 @@ extension DetailTarget: TargetType {
     
     var task: Task {
         switch self {
-        case .getMoviePhotos:
-            return .requestPlain
+        case .getMoviePhotos(let movie):
+            var params = [String : Any]()
+            
+            params[DetailConstant.Keys.apiKey] = DetailConstant.Values.APIKEY
+            params[DetailConstant.Keys.method] = DetailConstant.Values.METHOD
+            params[DetailConstant.Keys.format] = DetailConstant.Values.FORMAT
+            params[DetailConstant.Keys.nojsoncallback] = DetailConstant.Values.JSONCALLBACK
+            params[DetailConstant.Keys.text] = movie.title!
+            if let genrs = movie.genres {
+                params[DetailConstant.Keys.tags] = genrs.description
+            }
+            
+            
+            return .requestParameters(parameters: params, encoding: URLEncoding.default)
         }
     }
     

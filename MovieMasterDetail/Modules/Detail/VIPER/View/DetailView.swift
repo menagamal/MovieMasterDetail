@@ -10,8 +10,14 @@
 
 import Foundation
 import UIKit
-
+import Cosmos
 //MARK: View -
 protocol DetailView: class {
     var photosCollection: UICollectionView! { get set }
+    var mainImageView: UIImageView! { get set }
+    var labelTitle: UILabel! { get set }
+    var labelYear: UILabel! { get set }
+    var labelGeners: UILabel! { get set }
+    var labelCast: UILabel! { get set }
+    var ratingView: CosmosView! {get set}
 }
