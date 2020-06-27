@@ -31,7 +31,7 @@
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bea-CA-C5f">
                                     <rect key="frame" x="8" y="8" width="131.5" height="199"/>
-                                    <color key="backgroundColor" red="1" green="0.054901960780000002" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" red="0.18039215689999999" green="0.18039215689999999" blue="0.23386665240000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </imageView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="f6R-jI-RrE">
                                     <rect key="frame" x="151.5" y="32" width="211.5" height="151"/>

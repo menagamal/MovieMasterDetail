@@ -14,7 +14,7 @@ import UIKit
 
 class HomeRouter {
    enum Destination {
-    case Details(movie:Movie),None
+    case YearPicker(delegate:DatePickerDelegate,years:[String]),Details(movie:Movie),None
     }
     
     var navigationController: UINavigationController?
@@ -51,12 +51,21 @@ class HomeRouter {
         return vc
     }
 
+    func openDatePicker(delegate:DatePickerDelegate,years:[String]) -> PopupDialog{
+        let vc = DatePickerViewController(nibName: "DatePickerViewController", bundle: nil)
+        vc.config(delegate: delegate, years: years)
+        
+        return PopupDialog(viewController: vc, buttonAlignment: .horizontal, transitionStyle: .zoomIn, preferredWidth: 340, gestureDismissal: true, hideStatusBar: true, completion: nil)
+        
+    }
     func makeViewController(for destination: Destination) -> UIViewController {
         switch destination {
         case .Details(let movie):
             return detailViewController(movie: movie)
         case .None:
             return UIViewController()
+        case .YearPicker(let delegate, let years):
+            return openDatePicker(delegate: delegate, years: years)
         }
     }
 }

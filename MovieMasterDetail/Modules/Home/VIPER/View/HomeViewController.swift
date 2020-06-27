@@ -16,13 +16,24 @@ class HomeViewController: UIViewController, HomeView {
     
     @IBOutlet weak var moviesTableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
-    
+    var yearButton: UIBarButtonItem?
     override func viewDidLoad() {
         super.viewDidLoad()
         HomeBuilder().build(vc: self, navigator: self.navigationController!)
         self.presenter?.fetchMovies()
+        setUpSearchBar()
+        yearButton = UIBarButtonItem(title: "Search By Year", style: .plain, target: self, action: #selector(openYearDialog))
+        yearButton?.tintColor = UIColor(hexString: "#FF0E5E")
+        navigationItem.rightBarButtonItems = [yearButton!]
+    }
+    @objc func openYearDialog() {
+        self.presenter?.openYearsPicker()
+    }
+    
+    func setUpSearchBar() {
         searchBar.searchTextField.textColor = .white
         searchBar.delegate = self
+        
         if let textFieldInsideSearchBar = self.searchBar.value(forKey: "searchField") as? UITextField,
             let glassIconView = textFieldInsideSearchBar.leftView as? UIImageView {
             
@@ -30,7 +41,6 @@ class HomeViewController: UIViewController, HomeView {
             glassIconView.image = glassIconView.image?.withRenderingMode(.alwaysTemplate)
             glassIconView.tintColor = .white
         }
-        
     }
     
     func showError(message: String) {
@@ -41,7 +51,7 @@ class HomeViewController: UIViewController, HomeView {
 
 extension HomeViewController:UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-            self.presenter?.search(str:searchText)
+        self.presenter?.search(str:searchText)
         
     }
 }

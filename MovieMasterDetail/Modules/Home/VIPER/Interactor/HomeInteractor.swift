@@ -17,13 +17,13 @@ protocol HomeUseCase {
     func searchWithGenres(str:String,items:[Movie]) -> [Movie]
     func searchWithTitle(str:String,items:[Movie]) -> [Movie]
     func sortByTopRated(movies:[Movie]) -> [Movie]
-    func searchWithYear(year: Int, items: [Movie]) -> [Movie]
+    func searchWithYear(year: Int) -> [Movie] 
 }
 
 class HomeInteractor: HomeUseCase {
     
     var presenter:HomePresenterDelegate?
-    private var movies = [Movie]()
+    var movies = [Movie]()
     
     init() {
     
@@ -100,8 +100,9 @@ class HomeInteractor: HomeUseCase {
         return movies.sorted(by: { $0.rating! > $1.rating! })
     }
     
-    func searchWithYear(year: Int, items: [Movie]) -> [Movie] {
-        return items.filter({ $0.year! == year})
+    func searchWithYear(year: Int) -> [Movie] {
+        let moviesInYear = movies.filter({ $0.year! == year})
+        return sortByTopRated(movies: moviesInYear)
         
     }
 }

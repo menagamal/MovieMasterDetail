@@ -11,14 +11,12 @@ PODS:
   - SDWebImage (4.4.7):
     - SDWebImage/Core (= 4.4.7)
   - SDWebImage/Core (4.4.7)
-  - WaterfallLayout (0.2)
 
 DEPENDENCIES:
   - Cosmos (~> 22.1)
   - IQKeyboardManagerSwift
   - Moya
   - SDWebImage (~> 4.0)
-  - WaterfallLayout (~> 0.1)
 
 SPEC REPOS:
   trunk:
@@ -28,7 +26,6 @@ SPEC REPOS:
     - Moya
     - Result
     - SDWebImage
-    - WaterfallLayout
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
@@ -37,8 +34,7 @@ SPEC CHECKSUMS:
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   SDWebImage: c10d14a8883ebd89664f02a422006f66a85c0c5d
-  WaterfallLayout: 030e04b041e5c6c47ae2c1eaa685c60289fab0b1
 
-PODFILE CHECKSUM: 6243ced7b77ab5e95448eb2d554ae342e793ad81
+PODFILE CHECKSUM: c72e33a9ccf6f5d999e45c1dd70902d7839d2488
 
 COCOAPODS: 1.9.1
