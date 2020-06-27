@@ -18,6 +18,8 @@
 		D013DC6C24A6D21300740C94 /* DetailInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F48E8824A6AB6100C7147B /* DetailInteractorMock.swift */; };
 		D0A3AA7424A7810C00C133D6 /* CHTCollectionViewWaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A3AA7324A7810C00C133D6 /* CHTCollectionViewWaterfallLayout.swift */; };
 		D0A3AA7624A7CE9D00C133D6 /* UIColor+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A3AA7524A7CE9D00C133D6 /* UIColor+Extentions.swift */; };
+		D0A3AA7724A7D1EB00C133D6 /* UIColor+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A3AA7524A7CE9D00C133D6 /* UIColor+Extentions.swift */; };
+		D0A3AA7824A7D1FE00C133D6 /* CHTCollectionViewWaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A3AA7324A7810C00C133D6 /* CHTCollectionViewWaterfallLayout.swift */; };
 		D0C27BC324A5411600910F8A /* UIViewController+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C27BC224A5411600910F8A /* UIViewController+Extentions.swift */; };
 		D0C27BC424A54BB500910F8A /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E0444D24A4115F00AADB5A /* DetailPresenter.swift */; };
 		D0C27BC524A54BB500910F8A /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E0444E24A4115F00AADB5A /* DetailRouter.swift */; };
@@ -713,6 +715,7 @@
 				D0E0444024A3FC9200AADB5A /* Array.swift in Sources */,
 				D0E1241D24A3D5BE00F22F6B /* HomeInteractorMock.swift in Sources */,
 				D0E1241A24A3D54400F22F6B /* MoviesResponse.swift in Sources */,
+				D0A3AA7824A7D1FE00C133D6 /* CHTCollectionViewWaterfallLayout.swift in Sources */,
 				D0C27BC424A54BB500910F8A /* DetailPresenter.swift in Sources */,
 				D0C27BC624A54BB500910F8A /* DetailViewController.swift in Sources */,
 				D0F48E8A24A6ABE200C7147B /* DetailTarget.swift in Sources */,
@@ -727,6 +730,7 @@
 				D0C27BC724A54BB500910F8A /* DetailBuilder.swift in Sources */,
 				D013DC6924A6B34A00740C94 /* UIImageView+Extentions.swift in Sources */,
 				D0F48E8B24A6ACC400C7147B /* DetailConstant.swift in Sources */,
+				D0A3AA7724A7D1EB00C133D6 /* UIColor+Extentions.swift in Sources */,
 				D0C27BC924A54BB500910F8A /* DetailView.swift in Sources */,
 				D0E0444424A3FCC500AADB5A /* HomeRouter.swift in Sources */,
 				D0E0444624A3FCD200AADB5A /* MovieTableViewCell.swift in Sources */,

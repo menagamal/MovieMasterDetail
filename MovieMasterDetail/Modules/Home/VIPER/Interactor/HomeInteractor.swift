@@ -17,6 +17,7 @@ protocol HomeUseCase {
     func searchWithGenres(str:String,items:[Movie]) -> [Movie]
     func searchWithTitle(str:String,items:[Movie]) -> [Movie]
     func sortByTopRated(movies:[Movie]) -> [Movie]
+    func searchWithYear(year: Int, items: [Movie]) -> [Movie]
 }
 
 class HomeInteractor: HomeUseCase {
@@ -99,5 +100,9 @@ class HomeInteractor: HomeUseCase {
         return movies.sorted(by: { $0.rating! > $1.rating! })
     }
     
+    func searchWithYear(year: Int, items: [Movie]) -> [Movie] {
+        return items.filter({ $0.year! == year})
+        
+    }
 }
 
