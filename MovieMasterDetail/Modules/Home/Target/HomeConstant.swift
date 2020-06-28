@@ -11,7 +11,7 @@ import Foundation
 
 enum HomeConstant {
     struct Keys {
-        
+        static let CACHE_KEY = "CACHE_KEY"
     }
     
     enum API {

@@ -11,7 +11,7 @@
 import UIKit
 import Cosmos
 class DetailPresenter: DetailPresenterUseCases {
-     
+    
     private var interactor:DetailInteractor?
     private var router:DetailRouter?
     
@@ -40,20 +40,27 @@ class DetailPresenter: DetailPresenterUseCases {
 }
 
 extension DetailPresenter :DetailPresenterDelegate{
-    func imagesUrl(with urls: [NSURL]) {
-        var photosUrls = urls
-        if !photosUrls.isEmpty {
-            let first = photosUrls.first!
-            self.view?.mainImageView!.sd_setImage(with: first as URL?, completed: { (img, e, s, u) in
-
-            })
-            photosUrls.removeFirst()
-            dataSource = PhotoCollectionViewCellDataSource(collection: self.view!.photosCollection, urls: photosUrls)
+    func moviesImages(with photos:[Photo]){
+        var photos = photos
+        if !photos.isEmpty {
+            if let base64 = photos.first?.base64 ,!base64.isEmpty {
+                let dataDecoded : Data = Data(base64Encoded: base64, options: .ignoreUnknownCharacters)!
+                       let decodedimage:UIImage = UIImage(data: dataDecoded)!
+                       self.view?.mainImageView!.image = decodedimage
+            } else {
+                let first = photos.first!.url!
+                self.view?.mainImageView!.sd_setImage(with: first as URL?, completed: { (img, e, s, u) in
+                    
+                })
+            }
+            
+            photos.removeFirst()
+            dataSource = PhotoCollectionViewCellDataSource(collection: self.view!.photosCollection, photos: photos,delegate: self)
         }
     }
     
     func failedToLoad(message: String) {
-        
+        self.view?.showError(message: message)
     }
     func presentMovie(with movie: Movie) {
         self.view?.labelTitle.text = movie.title!
@@ -71,9 +78,18 @@ extension DetailPresenter :DetailPresenterDelegate{
         self.view?.ratingView.rating = Double(movie.rating!)
     }
 }
+
+extension DetailPresenter:PhotoCellDelegate {
+    func cacheImage(index:Int,base64: String) {
+        interactor?.cacheImage(index: index, base64: base64)
+    }
+    
+}
+
+
 protocol DetailPresenterDelegate {
     func presentMovie(with movie:Movie)
-    func imagesUrl(with urls:[NSURL])
+    func moviesImages(with photos:[Photo])
     func failedToLoad(message:String)
 }
 

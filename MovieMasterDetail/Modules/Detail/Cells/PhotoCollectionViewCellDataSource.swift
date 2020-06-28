@@ -13,17 +13,19 @@ import UIKit
 class PhotoCollectionViewCellDataSource: NSObject ,UICollectionViewDataSource{
     
     var collection:UICollectionView!
-    var urls = [NSURL]()
+    var photos = [Photo]()
+    var delegate:PhotoCellDelegate?
+    
     override init() {
         super.init()
     }
     
-    init(collection:UICollectionView,urls:[NSURL]) {
+    init(collection:UICollectionView,photos:[Photo],delegate:PhotoCellDelegate) {
         super.init()
         
         
-        self.urls = urls
-        
+        self.photos = photos
+        self.delegate = delegate
         self.collection = collection
         
         self.collection.register(UINib(nibName: "PhotoCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "PhotoCollectionViewCell")
@@ -38,12 +40,25 @@ class PhotoCollectionViewCellDataSource: NSObject ,UICollectionViewDataSource{
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return urls.count
+        return photos.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCollectionViewCell",for: indexPath) as! PhotoCollectionViewCell
-        cell.setDetails(url: urls[indexPath.row])
+        let base64 = photos[indexPath.row].base64
+        if !base64.isEmpty {
+            cell.setDetails(with: base64)
+        } else {
+            if let url = photos[indexPath.row].url {
+                cell.setDetails(url: url, completation: { img in
+                    let imageData = img.pngData()
+                    let imageToBaseStr = imageData!.base64EncodedString(options: .lineLength76Characters)
+                    self.delegate?.cacheImage(index:indexPath.row, base64: imageToBaseStr)
+                })
+            }
+            
+        }
+        
         return cell
     }
     func setupCollectionViewLayout() {
@@ -72,4 +87,9 @@ extension PhotoCollectionViewCellDataSource: CHTCollectionViewDelegateWaterfallL
         return 2
     }
     
+}
+
+
+protocol PhotoCellDelegate {
+    func cacheImage(index:Int,base64:String)
 }

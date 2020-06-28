@@ -25,6 +25,13 @@ class HomeViewController: UIViewController, HomeView {
         yearButton = UIBarButtonItem(title: "Search By Year", style: .plain, target: self, action: #selector(openYearDialog))
         yearButton?.tintColor = UIColor(hexString: "#FF0E5E")
         navigationItem.rightBarButtonItems = [yearButton!]
+        
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        CacheHandler.shared.SaveData(moviesObject: Constant.movieResponse)
+        
+        
     }
     @objc func openYearDialog() {
         self.presenter?.openYearsPicker()
@@ -44,7 +51,7 @@ class HomeViewController: UIViewController, HomeView {
     }
     
     func showError(message: String) {
-        
+        Toast.showAlert(viewController: self, text: message)
     }
     
 }

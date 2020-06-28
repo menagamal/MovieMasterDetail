@@ -29,4 +29,5 @@ enum AppConstant {
 
 struct Constant {
     static var genres = [String]()
+    static var movieResponse = MoviesResponse()
 }

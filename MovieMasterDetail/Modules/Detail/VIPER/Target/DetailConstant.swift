@@ -73,8 +73,12 @@ enum DetailConstant {
     enum DetailError :Error {
         case InvalidURL
         case ParsingError
+        case NoPhotos
+        
         var localizedDescription: String {
             switch self {
+            case .NoPhotos:
+                return "The Movie does not have a list of photos so it will be removed from the movies list ."
             case .ParsingError:
                 return "the data could not be read in the correct format."
             case .InvalidURL:

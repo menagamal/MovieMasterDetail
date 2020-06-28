@@ -10,11 +10,12 @@
 
 import Foundation
 import Moya
-
+import Reachability
 protocol DetailUseCase {
     func loadMovie()
     func loadMoviePhotos()
-    func photoUrlBuilder( photo: Photo) -> NSURL
+    func photoUrlBuilder( photo: Photo)
+    func cacheImage(index:Int,base64: String)
 }
 
 class DetailInteractor: DetailUseCase {
@@ -37,43 +38,64 @@ class DetailInteractor: DetailUseCase {
     }
     
     func loadMoviePhotos() {
-        provider.request(.getMoviePhotos(movei: movie!)) { result in
-            switch(result) {
-            case .success(let response):
-                DispatchQueue.main.async {
-                    do {
-                        if response.statusCode == AppConstant.API.Codes.success.rawValue {
-                            
-                            let responseModel: PhotoApiResponse = try response.map(PhotoApiResponse.self)
-                            var urls = [NSURL]()
-                            for item in (responseModel.photos?.photo)! {
-                                let url = self.photoUrlBuilder(photo: item)
-                                urls.append(url)
+        let reachability = try? Reachability()
+        if reachability!.connection != .unavailable {
+            provider.request(.getMoviePhotos(movei: movie!)) { result in
+                switch(result) {
+                case .success(let response):
+                    DispatchQueue.main.async {
+                        do {
+                            if response.statusCode == AppConstant.API.Codes.success.rawValue {
+                                
+                                let responseModel: PhotoApiResponse = try response.map(PhotoApiResponse.self)
+                                
+                                if responseModel.photos?.photo?.isEmpty ?? false {
+                                    self.movie?.shouldShow = false
+                                    CacheHandler.shared.updateMovie(with: self.movie!)
+                                    self.presenter?.failedToLoad(message: DetailConstant.DetailError.NoPhotos.localizedDescription)
+                                }
+                                
+                                for item in (responseModel.photos?.photo)! {
+                                    self.photoUrlBuilder(photo: item)
+                                }
+                                
+                                self.movie?.photoResponse = responseModel.photos
+                                CacheHandler.shared.updateMovie(with: self.movie!)
+                                self.presenter?.moviesImages(with: responseModel.photos!.photo!)
+                            } else {
+                                self.presenter?.failedToLoad(message: DetailConstant.DetailError.InvalidURL.localizedDescription)
                             }
-                            self.presenter?.imagesUrl(with: urls)
-                        } else {
-                            self.presenter?.failedToLoad(message: DetailConstant.DetailError.InvalidURL.localizedDescription)
+                        } catch{
+                            self.presenter?.failedToLoad(message: DetailConstant.DetailError.ParsingError.localizedDescription)
                         }
-                    } catch{
-                        self.presenter?.failedToLoad(message: DetailConstant.DetailError.ParsingError.localizedDescription)
+                    }
+                case .failure(let error):
+                    DispatchQueue.main.async {
+                        self.presenter?.failedToLoad(message: error.localizedDescription)
                     }
                 }
-            case .failure(let error):
-                DispatchQueue.main.async {
-                    self.presenter?.failedToLoad(message: error.localizedDescription)
-                }
             }
+        } else {
+            self.presenter?.moviesImages(with: self.movie?.photoResponse?.photo ?? [Photo]())
         }
+        
     }
     
-    func photoUrlBuilder(photo: Photo) -> NSURL {
+    func photoUrlBuilder(photo: Photo) {
         let farm = Int(photo.farm!)
-               let server = Int(photo.server!)!
-               let id = Int(photo.id!)!
-               let secret = photo.secret!
-               
-               
-        return NSURL(string: "https://farm\(farm).staticflickr.com/\(server)/\(id)_\(secret)_m.jpg")!
+        let server = Int(photo.server!)!
+        let id = Int(photo.id!)!
+        let secret = photo.secret!
+        
+        
+        photo.url = NSURL(string: "https://farm\(farm).staticflickr.com/\(server)/\(id)_\(secret)_m.jpg")!
+    }
+    
+    func cacheImage(index:Int,base64: String){
+        if (self.movie?.photoResponse?.photo?.indices.contains(index))! {
+            self.movie?.photoResponse?.photo?[index].base64 = base64
+        }
+        CacheHandler.shared.updateMovie(with: self.movie!)
     }
     
 }

@@ -12,7 +12,7 @@ import UIKit
 import Cosmos
 
 class DetailViewController: UIViewController, DetailView {
-
+  
 	var presenter: DetailPresenter?
 
     @IBOutlet weak var ratingView: CosmosView!
@@ -33,5 +33,13 @@ class DetailViewController: UIViewController, DetailView {
         presenter?.loadDetails()
         presenter?.loadPhotos()
     }
+    func showError(message: String) {
+        Toast.showAlert(viewController: self, text: message, style: .alert, UIAlertAction(title: "Okay", style: .default, handler: { (_) in
+            let _ = self.navigationController?.popViewController(animated: true)
+        }))
+        
+      }
+      
+
 
 }

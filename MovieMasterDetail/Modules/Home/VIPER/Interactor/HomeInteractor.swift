@@ -26,30 +26,41 @@ class HomeInteractor: HomeUseCase {
     var movies = [Movie]()
     
     init() {
-    
+        
     }
     
     func parseMoviesFromLocalFile() {
-        
-        let bundle = Bundle(for: type(of: self))
-        guard let url = bundle.url(forResource: "movies", withExtension: "json") else {
-            presenter?.errorFetchingMovies(error: .NoJsonFile)
-            return
-        }
-        do {
-            let json = try Data(contentsOf: url)
+        if let moviesResponse = CacheHandler.shared.loadAllCachedData() {
+            self.movies = moviesResponse.movies!
+            self.movies = filterUnAvailableMovies(movies: self.movies)
+            Constant.movieResponse = moviesResponse
+            presenter?.didFetchMovies(movies: self.movies)
+        } else {
+            let bundle = Bundle(for: type(of: self))
+            guard let url = bundle.url(forResource: "movies", withExtension: "json") else {
+                presenter?.errorFetchingMovies(error: .NoJsonFile)
+                return
+            }
             do {
-                let responseModel: MoviesResponse = try JSONDecoder().decode(MoviesResponse.self, from: json)
-                
-                self.movies = responseModel.movies!
-                presenter?.didFetchMovies(movies: responseModel.movies!)
+                let json = try Data(contentsOf: url)
+                do {
+                    let responseModel: MoviesResponse = try JSONDecoder().decode(MoviesResponse.self, from: json)
+                    
+                    // Using the index as an ID for each movie 
+                    for (i,item) in responseModel.movies!.enumerated() {
+                        item.id = i
+                    }
+                    Constant.movieResponse = responseModel
+                    self.movies = responseModel.movies!
+                    presenter?.didFetchMovies(movies: responseModel.movies!)
+                } catch {
+                    presenter?.errorFetchingMovies(error: .ParsingError)
+                }
             } catch {
                 presenter?.errorFetchingMovies(error: .ParsingError)
             }
-        } catch {
-            presenter?.errorFetchingMovies(error: .ParsingError)
+            
         }
-        
     }
     
     func searchWithGenres(str: String, items: [Movie]) -> [Movie] {
@@ -104,6 +115,10 @@ class HomeInteractor: HomeUseCase {
         let moviesInYear = movies.filter({ $0.year! == year})
         return sortByTopRated(movies: moviesInYear)
         
+    }
+    
+    func filterUnAvailableMovies(movies:[Movie]) -> [Movie]  {
+        return movies.filter({ $0.shouldShow == true})
     }
 }
 

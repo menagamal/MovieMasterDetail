@@ -14,8 +14,8 @@
 		D013DC6724A6B12F00740C94 /* PhotoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F48E8224A682EF00C7147B /* PhotoResponse.swift */; };
 		D013DC6824A6B15000740C94 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F48E8024A682E100C7147B /* Photo.swift */; };
 		D013DC6924A6B34A00740C94 /* UIImageView+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E8B4BB24A53E65005A9296 /* UIImageView+Extentions.swift */; };
-		D013DC6B24A6C66B00740C94 /* QueryArrayEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D013DC6A24A6C66B00740C94 /* QueryArrayEncoding.swift */; };
 		D013DC6C24A6D21300740C94 /* DetailInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F48E8824A6AB6100C7147B /* DetailInteractorMock.swift */; };
+		D04FB2A324A95A29003565DA /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04FB2A224A95A29003565DA /* Toast.swift */; };
 		D0A3AA7424A7810C00C133D6 /* CHTCollectionViewWaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A3AA7324A7810C00C133D6 /* CHTCollectionViewWaterfallLayout.swift */; };
 		D0A3AA7624A7CE9D00C133D6 /* UIColor+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A3AA7524A7CE9D00C133D6 /* UIColor+Extentions.swift */; };
 		D0A3AA7724A7D1EB00C133D6 /* UIColor+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A3AA7524A7CE9D00C133D6 /* UIColor+Extentions.swift */; };
@@ -45,6 +45,32 @@
 		D0A3AAAD24A7D75A00C133D6 /* UIImage+Blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A3AAA624A7D75A00C133D6 /* UIImage+Blur.swift */; };
 		D0A3AAAE24A7D75A00C133D6 /* BlurLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A3AAA724A7D75A00C133D6 /* BlurLayer.swift */; };
 		D0A3AAAF24A7D75A00C133D6 /* DynamicBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A3AAA824A7D75A00C133D6 /* DynamicBlurView.swift */; };
+		D0A3AAB024A9082D00C133D6 /* CGImage+Accelerate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A3AAA124A7D75A00C133D6 /* CGImage+Accelerate.swift */; };
+		D0A3AAB124A9083B00C133D6 /* TrackingMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A3AAA524A7D75A00C133D6 /* TrackingMode.swift */; };
+		D0A3AAB224A9083B00C133D6 /* UIImage+Blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A3AAA624A7D75A00C133D6 /* UIImage+Blur.swift */; };
+		D0A3AAB324A9083B00C133D6 /* BlurLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A3AAA724A7D75A00C133D6 /* BlurLayer.swift */; };
+		D0A3AAB424A9083B00C133D6 /* DynamicBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A3AAA824A7D75A00C133D6 /* DynamicBlurView.swift */; };
+		D0A3AAB524A9085D00C133D6 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A3AA7B24A7D73000C133D6 /* DatePickerViewController.swift */; };
+		D0A3AAB624A9085D00C133D6 /* DatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0A3AA7C24A7D73000C133D6 /* DatePickerViewController.xib */; };
+		D0A3AAB724A9086F00C133D6 /* InteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A3AA7E24A7D73000C133D6 /* InteractiveTransition.swift */; };
+		D0A3AAB824A9086F00C133D6 /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A3AA7F24A7D73000C133D6 /* PresentationController.swift */; };
+		D0A3AAB924A9086F00C133D6 /* UIImageView+Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A3AA8024A7D73000C133D6 /* UIImageView+Calculations.swift */; };
+		D0A3AABA24A9086F00C133D6 /* UIView+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A3AA8124A7D73000C133D6 /* UIView+Animations.swift */; };
+		D0A3AABB24A9086F00C133D6 /* PopupDialogDefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A3AA8224A7D73000C133D6 /* PopupDialogDefaultView.swift */; };
+		D0A3AABC24A9086F00C133D6 /* PopupDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A3AA8324A7D73000C133D6 /* PopupDialog.swift */; };
+		D0A3AABD24A9086F00C133D6 /* PopupDialogOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A3AA8424A7D73000C133D6 /* PopupDialogOverlayView.swift */; };
+		D0A3AABE24A9086F00C133D6 /* PopupDialogButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A3AA8524A7D73000C133D6 /* PopupDialogButton.swift */; };
+		D0A3AABF24A9086F00C133D6 /* UIViewController+Visibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A3AA8624A7D73000C133D6 /* UIViewController+Visibility.swift */; };
+		D0A3AAC024A9086F00C133D6 /* TransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A3AA8724A7D73000C133D6 /* TransitionAnimator.swift */; };
+		D0A3AAC124A9086F00C133D6 /* PopupDialog+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A3AA8824A7D73000C133D6 /* PopupDialog+Keyboard.swift */; };
+		D0A3AAC224A9086F00C133D6 /* PopupDialogDefaultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A3AA8924A7D73000C133D6 /* PopupDialogDefaultViewController.swift */; };
+		D0A3AAC324A9086F00C133D6 /* TransitionAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A3AA8A24A7D73000C133D6 /* TransitionAnimations.swift */; };
+		D0A3AAC424A9086F00C133D6 /* PopupDialogDefaultButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A3AA8B24A7D73000C133D6 /* PopupDialogDefaultButtons.swift */; };
+		D0A3AAC524A9086F00C133D6 /* PresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A3AA8C24A7D73000C133D6 /* PresentationManager.swift */; };
+		D0A3AAC624A9086F00C133D6 /* PopupDialogContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A3AA8D24A7D73000C133D6 /* PopupDialogContainerView.swift */; };
+		D0A3AAC724A9088000C133D6 /* CaptureQuality.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A3AAA324A7D75A00C133D6 /* CaptureQuality.swift */; };
+		D0A3AAC824A9088500C133D6 /* CGContext+CGImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A3AAA224A7D75A00C133D6 /* CGContext+CGImage.swift */; };
+		D0A3AACA24A915F000C133D6 /* CacheHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A3AAC924A915F000C133D6 /* CacheHandler.swift */; };
 		D0C27BC324A5411600910F8A /* UIViewController+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C27BC224A5411600910F8A /* UIViewController+Extentions.swift */; };
 		D0C27BC424A54BB500910F8A /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E0444D24A4115F00AADB5A /* DetailPresenter.swift */; };
 		D0C27BC524A54BB500910F8A /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E0444E24A4115F00AADB5A /* DetailRouter.swift */; };
@@ -126,7 +152,7 @@
 		5AD7A3BDC4459D18D1B9B80F /* Pods-MovieMasterDetailTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieMasterDetailTests.release.xcconfig"; path = "Target Support Files/Pods-MovieMasterDetailTests/Pods-MovieMasterDetailTests.release.xcconfig"; sourceTree = "<group>"; };
 		B9889FF6A0AD4CB715E9198E /* Pods_MovieMasterDetailTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieMasterDetailTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D013DC6424A6B0DF00740C94 /* PhotoApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoApiResponse.swift; sourceTree = "<group>"; };
-		D013DC6A24A6C66B00740C94 /* QueryArrayEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryArrayEncoding.swift; sourceTree = "<group>"; };
+		D04FB2A224A95A29003565DA /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		D0A3AA7324A7810C00C133D6 /* CHTCollectionViewWaterfallLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHTCollectionViewWaterfallLayout.swift; sourceTree = "<group>"; };
 		D0A3AA7524A7CE9D00C133D6 /* UIColor+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extentions.swift"; sourceTree = "<group>"; };
 		D0A3AA7B24A7D73000C133D6 /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +181,7 @@
 		D0A3AAA624A7D75A00C133D6 /* UIImage+Blur.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Blur.swift"; sourceTree = "<group>"; };
 		D0A3AAA724A7D75A00C133D6 /* BlurLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurLayer.swift; sourceTree = "<group>"; };
 		D0A3AAA824A7D75A00C133D6 /* DynamicBlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicBlurView.swift; sourceTree = "<group>"; };
+		D0A3AAC924A915F000C133D6 /* CacheHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheHandler.swift; sourceTree = "<group>"; };
 		D0C27BC224A5411600910F8A /* UIViewController+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extentions.swift"; sourceTree = "<group>"; };
 		D0E0443524A3EC6400AADB5A /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		D0E0443624A3EC6400AADB5A /* MovieTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieTableViewCell.xib; sourceTree = "<group>"; };
@@ -246,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				D0A3AA7324A7810C00C133D6 /* CHTCollectionViewWaterfallLayout.swift */,
+				D04FB2A224A95A29003565DA /* Toast.swift */,
 			);
 			path = Widgets;
 			sourceTree = "<group>";
@@ -256,6 +284,7 @@
 				D0A3AAA024A7D75A00C133D6 /* DynamicBlurView */,
 				D0A3AA7A24A7D73000C133D6 /* Date Picker */,
 				D0A3AA7D24A7D73000C133D6 /* PopupDialog */,
+				D0A3AAC924A915F000C133D6 /* CacheHandler.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -480,7 +509,6 @@
 			isa = PBXGroup;
 			children = (
 				D0E1241124A3CD5000F22F6B /* AppConstants.swift */,
-				D013DC6A24A6C66B00740C94 /* QueryArrayEncoding.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -679,6 +707,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0A3AAB624A9085D00C133D6 /* DatePickerViewController.xib in Resources */,
 				D0C27BCC24A54BD200910F8A /* PhotoCollectionViewCell.xib in Resources */,
 				D0E1241524A3D11A00F22F6B /* movies.json in Resources */,
 				D0C27BCA24A54BB500910F8A /* DetailViewController.xib in Resources */,
@@ -805,7 +834,9 @@
 				D0E0445924A4115F00AADB5A /* DetailView.swift in Sources */,
 				D0F48E8524A6839300C7147B /* DetailTarget.swift in Sources */,
 				D0C27BC324A5411600910F8A /* UIViewController+Extentions.swift in Sources */,
+				D0A3AACA24A915F000C133D6 /* CacheHandler.swift in Sources */,
 				D0E1240624A3CC3600F22F6B /* HomeView.swift in Sources */,
+				D04FB2A324A95A29003565DA /* Toast.swift in Sources */,
 				D0E8B4BE24A53F0B005A9296 /* PhotoCollectionViewCellDataSource.swift in Sources */,
 				D0E0445824A4115F00AADB5A /* DetailInteractor.swift in Sources */,
 				D0A3AA7424A7810C00C133D6 /* CHTCollectionViewWaterfallLayout.swift in Sources */,
@@ -815,7 +846,6 @@
 				D0A3AA7624A7CE9D00C133D6 /* UIColor+Extentions.swift in Sources */,
 				D0A3AAAC24A7D75A00C133D6 /* TrackingMode.swift in Sources */,
 				D0E123D624A3C92A00F22F6B /* SceneDelegate.swift in Sources */,
-				D013DC6B24A6C66B00740C94 /* QueryArrayEncoding.swift in Sources */,
 				D0E0445424A4115F00AADB5A /* DetailPresenter.swift in Sources */,
 				D0A3AA9224A7D73000C133D6 /* UIImageView+Calculations.swift in Sources */,
 				D0A3AA9124A7D73000C133D6 /* PresentationController.swift in Sources */,
@@ -839,34 +869,58 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0C27BC524A54BB500910F8A /* DetailRouter.swift in Sources */,
+				D0A3AAC024A9086F00C133D6 /* TransitionAnimator.swift in Sources */,
 				D0C27BCB24A54BD200910F8A /* PhotoCollectionViewCell.swift in Sources */,
+				D0A3AAC324A9086F00C133D6 /* TransitionAnimations.swift in Sources */,
 				D0E123EB24A3C92C00F22F6B /* MovieMasterDetailTests.swift in Sources */,
 				D013DC6824A6B15000740C94 /* Photo.swift in Sources */,
+				D0A3AAC424A9086F00C133D6 /* PopupDialogDefaultButtons.swift in Sources */,
 				D013DC6724A6B12F00740C94 /* PhotoResponse.swift in Sources */,
+				D0A3AAB124A9083B00C133D6 /* TrackingMode.swift in Sources */,
+				D0A3AABD24A9086F00C133D6 /* PopupDialogOverlayView.swift in Sources */,
 				D0F48E8924A6AB6100C7147B /* DetailInteractorMock.swift in Sources */,
+				D0A3AAC124A9086F00C133D6 /* PopupDialog+Keyboard.swift in Sources */,
 				D0E0443E24A3FB7B00AADB5A /* AppConstants.swift in Sources */,
 				D0C27BC824A54BB500910F8A /* DetailInteractor.swift in Sources */,
 				D0E0444024A3FC9200AADB5A /* Array.swift in Sources */,
+				D0A3AAB924A9086F00C133D6 /* UIImageView+Calculations.swift in Sources */,
 				D0E1241D24A3D5BE00F22F6B /* HomeInteractorMock.swift in Sources */,
 				D0E1241A24A3D54400F22F6B /* MoviesResponse.swift in Sources */,
+				D0A3AABE24A9086F00C133D6 /* PopupDialogButton.swift in Sources */,
 				D0A3AA7824A7D1FE00C133D6 /* CHTCollectionViewWaterfallLayout.swift in Sources */,
+				D0A3AAC724A9088000C133D6 /* CaptureQuality.swift in Sources */,
 				D0C27BC424A54BB500910F8A /* DetailPresenter.swift in Sources */,
 				D0C27BC624A54BB500910F8A /* DetailViewController.swift in Sources */,
 				D0F48E8A24A6ABE200C7147B /* DetailTarget.swift in Sources */,
+				D0A3AABA24A9086F00C133D6 /* UIView+Animations.swift in Sources */,
+				D0A3AAB324A9083B00C133D6 /* BlurLayer.swift in Sources */,
+				D0A3AAB024A9082D00C133D6 /* CGImage+Accelerate.swift in Sources */,
 				D0E1241E24A3D73100F22F6B /* HomeInteractor.swift in Sources */,
+				D0A3AAC224A9086F00C133D6 /* PopupDialogDefaultViewController.swift in Sources */,
 				D0C27BCD24A54BD200910F8A /* PhotoCollectionViewCellDataSource.swift in Sources */,
+				D0A3AABB24A9086F00C133D6 /* PopupDialogDefaultView.swift in Sources */,
+				D0A3AAB524A9085D00C133D6 /* DatePickerViewController.swift in Sources */,
 				D0E1241B24A3D54600F22F6B /* Movie.swift in Sources */,
 				D0E0444324A3FCAD00AADB5A /* HomeConstant.swift in Sources */,
+				D0A3AAB824A9086F00C133D6 /* PresentationController.swift in Sources */,
+				D0A3AABF24A9086F00C133D6 /* UIViewController+Visibility.swift in Sources */,
 				D0E0444724A3FCD200AADB5A /* MovieTableViewCellDataSource.swift in Sources */,
 				D0E0444524A3FCC500AADB5A /* HomeView.swift in Sources */,
 				D013DC6624A6B0F600740C94 /* PhotoApiResponse.swift in Sources */,
 				D0E0444124A3FC9800AADB5A /* HomePresenter.swift in Sources */,
+				D0A3AAC624A9086F00C133D6 /* PopupDialogContainerView.swift in Sources */,
+				D0A3AAB224A9083B00C133D6 /* UIImage+Blur.swift in Sources */,
 				D0C27BC724A54BB500910F8A /* DetailBuilder.swift in Sources */,
 				D013DC6924A6B34A00740C94 /* UIImageView+Extentions.swift in Sources */,
 				D0F48E8B24A6ACC400C7147B /* DetailConstant.swift in Sources */,
+				D0A3AAC824A9088500C133D6 /* CGContext+CGImage.swift in Sources */,
+				D0A3AAC524A9086F00C133D6 /* PresentationManager.swift in Sources */,
+				D0A3AAB724A9086F00C133D6 /* InteractiveTransition.swift in Sources */,
 				D0A3AA7724A7D1EB00C133D6 /* UIColor+Extentions.swift in Sources */,
+				D0A3AAB424A9083B00C133D6 /* DynamicBlurView.swift in Sources */,
 				D0C27BC924A54BB500910F8A /* DetailView.swift in Sources */,
 				D0E0444424A3FCC500AADB5A /* HomeRouter.swift in Sources */,
+				D0A3AABC24A9086F00C133D6 /* PopupDialog.swift in Sources */,
 				D0E0444624A3FCD200AADB5A /* MovieTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -132,7 +132,7 @@ class MovieMasterDetailTests: XCTestCase {
         homeInteractorMock = HomeInteractorMock()
         homeInteractorMock.parseMoviesFromLocalFile { (response) in
             let movies = response.1
-            let filteredMovies = self.homeInteractor.searchWithYear(year: 2010, items: movies)
+            let filteredMovies = self.homeInteractor.searchWithYear(year: 2010)
             for item in filteredMovies {
                 XCTAssertEqual(2010, item.year!)
             }

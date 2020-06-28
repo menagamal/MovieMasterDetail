@@ -1,12 +1,14 @@
 PODS:
   - Alamofire (4.9.1)
   - Cosmos (22.1.0)
+  - DataCache (1.5)
   - IQKeyboardManagerSwift (6.5.4)
   - Moya (13.0.1):
     - Moya/Core (= 13.0.1)
   - Moya/Core (13.0.1):
     - Alamofire (~> 4.1)
     - Result (~> 4.1)
+  - ReachabilitySwift (5.0.0)
   - Result (4.1.0)
   - SDWebImage (4.4.7):
     - SDWebImage/Core (= 4.4.7)
@@ -14,27 +16,33 @@ PODS:
 
 DEPENDENCIES:
   - Cosmos (~> 22.1)
+  - DataCache
   - IQKeyboardManagerSwift
   - Moya
+  - ReachabilitySwift
   - SDWebImage (~> 4.0)
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - Cosmos
+    - DataCache
     - IQKeyboardManagerSwift
     - Moya
+    - ReachabilitySwift
     - Result
     - SDWebImage
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   Cosmos: 2795b36ad4bbea1af3050d6d65576ed63875f86a
+  DataCache: 8099e01aa35c2fd30f3410aae14ef5a130f6524b
   IQKeyboardManagerSwift: 2dde0fc70110e8eac7ccce2a46fdbec6a850b414
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   SDWebImage: c10d14a8883ebd89664f02a422006f66a85c0c5d
 
-PODFILE CHECKSUM: c72e33a9ccf6f5d999e45c1dd70902d7839d2488
+PODFILE CHECKSUM: 123510d61824d78066badac0121ed7a913190972
 
 COCOAPODS: 1.9.1

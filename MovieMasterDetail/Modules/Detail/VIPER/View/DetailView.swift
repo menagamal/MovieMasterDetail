@@ -20,4 +20,6 @@ protocol DetailView: class {
     var labelGeners: UILabel! { get set }
     var labelCast: UILabel! { get set }
     var ratingView: CosmosView! {get set}
+    
+    func showError(message:String)
 }
