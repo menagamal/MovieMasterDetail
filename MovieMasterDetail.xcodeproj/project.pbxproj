@@ -102,7 +102,6 @@
 		D0E0445924A4115F00AADB5A /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E0445224A4115F00AADB5A /* DetailView.swift */; };
 		D0E0445A24A4115F00AADB5A /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0E0445324A4115F00AADB5A /* DetailViewController.xib */; };
 		D0E123D424A3C92A00F22F6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E123D324A3C92A00F22F6B /* AppDelegate.swift */; };
-		D0E123D624A3C92A00F22F6B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E123D524A3C92A00F22F6B /* SceneDelegate.swift */; };
 		D0E123DB24A3C92A00F22F6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0E123D924A3C92A00F22F6B /* Main.storyboard */; };
 		D0E123DD24A3C92C00F22F6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0E123DC24A3C92C00F22F6B /* Assets.xcassets */; };
 		D0E123E024A3C92C00F22F6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0E123DE24A3C92C00F22F6B /* LaunchScreen.storyboard */; };
@@ -196,7 +195,6 @@
 		D0E0445324A4115F00AADB5A /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		D0E123D024A3C92A00F22F6B /* MovieMasterDetail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieMasterDetail.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0E123D324A3C92A00F22F6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D0E123D524A3C92A00F22F6B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D0E123DA24A3C92A00F22F6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D0E123DC24A3C92C00F22F6B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0E123DF24A3C92C00F22F6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -419,7 +417,6 @@
 				D0E123F824A3CC2500F22F6B /* Modules */,
 				D0E123F524A3CC0C00F22F6B /* Resources */,
 				D0E123D324A3C92A00F22F6B /* AppDelegate.swift */,
-				D0E123D524A3C92A00F22F6B /* SceneDelegate.swift */,
 				D0E123D924A3C92A00F22F6B /* Main.storyboard */,
 				D0E123DC24A3C92C00F22F6B /* Assets.xcassets */,
 				D0E123DE24A3C92C00F22F6B /* LaunchScreen.storyboard */,
@@ -845,7 +842,6 @@
 				D0A3AAAA24A7D75A00C133D6 /* CGContext+CGImage.swift in Sources */,
 				D0A3AA7624A7CE9D00C133D6 /* UIColor+Extentions.swift in Sources */,
 				D0A3AAAC24A7D75A00C133D6 /* TrackingMode.swift in Sources */,
-				D0E123D624A3C92A00F22F6B /* SceneDelegate.swift in Sources */,
 				D0E0445424A4115F00AADB5A /* DetailPresenter.swift in Sources */,
 				D0A3AA9224A7D73000C133D6 /* UIImageView+Calculations.swift in Sources */,
 				D0A3AA9124A7D73000C133D6 /* PresentationController.swift in Sources */,
@@ -1077,6 +1073,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RHBB3377R2;
 				INFOPLIST_FILE = MovieMasterDetail/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1084,7 +1081,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mena.MovieMasterDetail;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1096,6 +1093,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RHBB3377R2;
 				INFOPLIST_FILE = MovieMasterDetail/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1103,7 +1101,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mena.MovieMasterDetail;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

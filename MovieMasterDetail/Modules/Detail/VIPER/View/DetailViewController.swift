@@ -35,6 +35,7 @@ class DetailViewController: UIViewController, DetailView {
     }
     func showError(message: String) {
         Toast.showAlert(viewController: self, text: message, style: .alert, UIAlertAction(title: "Okay", style: .default, handler: { (_) in
+
             let _ = self.navigationController?.popViewController(animated: true)
         }))
         

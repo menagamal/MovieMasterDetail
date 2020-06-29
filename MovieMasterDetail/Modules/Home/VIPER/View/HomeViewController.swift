@@ -26,13 +26,14 @@ class HomeViewController: UIViewController, HomeView {
         yearButton?.tintColor = UIColor(hexString: "#FF0E5E")
         navigationItem.rightBarButtonItems = [yearButton!]
         
+        
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         CacheHandler.shared.SaveData(moviesObject: Constant.movieResponse)
         
-        
     }
+   
     @objc func openYearDialog() {
         self.presenter?.openYearsPicker()
     }
